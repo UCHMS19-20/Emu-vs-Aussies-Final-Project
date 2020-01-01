@@ -47,8 +47,13 @@ class nzMap extends Tilemap
         }
         else if(numT[i*(cols)+(j+1)-1] == 5)
         {
+          terrainList[i][j] = new oceanTile(x,y);
+        }
+        else if(numT[i*(cols)+(j+1)-1] == 6)
+        {
           terrainList[i][j] = new whiteTile(x,y);
         }
+
         x+=130;
       }
       y+=130;
