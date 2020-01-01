@@ -10,7 +10,7 @@ class forestTile extends Tile
     tImage = loadImage("forest.jpg");
   }
   
-  public void tempPrint()
+  public void imagePrint()
   {
     image(tImage,xCord,yCord,tWidth,tHeight);
   }

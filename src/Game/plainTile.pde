@@ -10,7 +10,7 @@ class plainTile extends Tile
     tImage = loadImage("plain.jpg");
   }
   
-  public void tempPrint()
+  public void imagePrint()
   {
     image(tImage,xCord,yCord,tWidth,tHeight);
   }
