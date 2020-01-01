@@ -2,7 +2,7 @@ abstract class Tilemap
 {
   int rows;
   int cols;
-  Tile [][]terrainList;
+  public Tile [][]terrainList;
   
   public abstract void mapDisplay();
   
