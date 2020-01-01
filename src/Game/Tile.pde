@@ -6,6 +6,7 @@ abstract class Tile
   PImage tImage;
   int tWidth = 130;
   int tHeight = 130;
+  
  
   public void imagePrint()
   {

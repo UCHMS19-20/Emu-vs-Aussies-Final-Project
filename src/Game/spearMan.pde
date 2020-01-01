@@ -1,0 +1,4 @@
+class spearMan extends Soldier
+{
+  
+}

@@ -1,0 +1,4 @@
+class fistFighter extends Soldier
+{
+  
+}
