@@ -7,7 +7,7 @@ class MountainTile extends Tile
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("images/mountain.jpg");
+    tImage = loadImage("images/tiles/mountain.jpg");
   }
   
   public void imagePrint()

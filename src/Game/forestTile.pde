@@ -7,7 +7,7 @@ class ForestTile extends Tile
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("images/forest.jpg");
+    tImage = loadImage("images/tiles/forest.jpg");
   }
   
   public void imagePrint()

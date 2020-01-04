@@ -7,7 +7,7 @@ class PlainTile extends Tile
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("images/plain.jpg");
+    tImage = loadImage("images/tiles/plain.jpg");
   }
   
   public void imagePrint()

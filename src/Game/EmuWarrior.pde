@@ -1,4 +1,4 @@
-abstract class Soldier
+abstract class EmuWarrior
 {
   int attack;
   int defense;

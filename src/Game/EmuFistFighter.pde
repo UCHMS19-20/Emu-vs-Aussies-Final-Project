@@ -1,0 +1,4 @@
+//class EmuFistFighter extends EmuWarrior
+//{
+  
+//}

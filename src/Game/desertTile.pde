@@ -7,7 +7,7 @@ class DesertTile extends Tile
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("images/desert.jpg");
+    tImage = loadImage("images/tiles/desert.jpg");
   }
   
   public void imagePrint()

@@ -7,7 +7,7 @@ class WhiteTile extends Tile
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("images/white.jpg");
+    tImage = loadImage("images/tiles/white.jpg");
   }
   
   public void imagePrint()

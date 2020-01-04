@@ -7,7 +7,7 @@ class OceanTile extends Tile
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("images/ocean.jpg");
+    tImage = loadImage("images/tiles/ocean.jpg");
   }
   
   public void imagePrint()
