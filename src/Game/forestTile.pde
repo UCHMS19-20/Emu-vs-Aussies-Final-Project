@@ -1,13 +1,13 @@
 import java.util.*;
-class forestTile extends Tile
+class ForestTile extends Tile
 {
   String landscape = "forestTile";
  
-  public forestTile(int xPos, int yPos)
+  public ForestTile(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("forest.jpg");
+    tImage = loadImage("images/forest.jpg");
   }
   
   public void imagePrint()

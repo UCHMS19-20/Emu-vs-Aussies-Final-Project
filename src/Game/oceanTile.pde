@@ -1,13 +1,13 @@
 import java.util.*;
-class oceanTile extends Tile
+class OceanTile extends Tile
 {
   String landscape = "oceanTile";
 
-  public oceanTile(int xPos, int yPos)
+  public OceanTile(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("ocean.jpg");
+    tImage = loadImage("images/ocean.jpg");
   }
   
   public void imagePrint()

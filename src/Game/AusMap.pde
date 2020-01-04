@@ -1,4 +1,4 @@
-class nzMap extends Tilemap
+class AusMap extends Tilemap
 {
   String location = "New Zealand forest";
   int x = 0;
@@ -6,7 +6,7 @@ class nzMap extends Tilemap
   //1 = plain, 2 = forest, 3 = mountain, 4 = desert, 5 = white,
   int []numT = {1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1};
   
-  public nzMap(int rowNum,int colNum)
+  public AusMap(int rowNum,int colNum)
   {
     rows = rowNum;
     cols = colNum;
@@ -31,27 +31,27 @@ class nzMap extends Tilemap
       {
         if(numT[i*(cols)+(j+1)-1] == 1)
         {
-          terrainList[i][j] = new plainTile(x,y);
+          terrainList[i][j] = new PlainTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 2)
         {
-          terrainList[i][j] = new forestTile(x,y);
+          terrainList[i][j] = new ForestTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 3)
         {
-          terrainList[i][j] = new mountainTile(x,y);
+          terrainList[i][j] = new MountainTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 4)
         {
-          terrainList[i][j] = new desertTile(x,y);
+          terrainList[i][j] = new DesertTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 5)
         {
-          terrainList[i][j] = new oceanTile(x,y);
+          terrainList[i][j] = new OceanTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 6)
         {
-          terrainList[i][j] = new whiteTile(x,y);
+          terrainList[i][j] = new WhiteTile(x,y);
         }
 
         x+=130;

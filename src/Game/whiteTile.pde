@@ -1,13 +1,13 @@
 import java.util.*;
-class whiteTile extends Tile
+class WhiteTile extends Tile
 {
   String landscape = "whiteTile";
  
-  public whiteTile(int xPos, int yPos)
+  public WhiteTile(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("white.jpg");
+    tImage = loadImage("images/white.jpg");
   }
   
   public void imagePrint()

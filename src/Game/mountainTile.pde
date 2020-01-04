@@ -1,13 +1,13 @@
 import java.util.*;
-class mountainTile extends Tile
+class MountainTile extends Tile
 {
   String landscape = "mountainTile";
  
-  public mountainTile(int xPos, int yPos)
+  public MountainTile(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("mountain.jpg");
+    tImage = loadImage("images/mountain.jpg");
   }
   
   public void imagePrint()

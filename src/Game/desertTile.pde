@@ -1,13 +1,13 @@
 import java.util.*;
-class desertTile extends Tile
+class DesertTile extends Tile
 {
   String landscape = "desertTile";
 
-  public desertTile(int xPos, int yPos)
+  public DesertTile(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;
-    tImage = loadImage("desert.jpg");
+    tImage = loadImage("images/desert.jpg");
   }
   
   public void imagePrint()
