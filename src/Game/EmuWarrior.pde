@@ -2,9 +2,8 @@ abstract class EmuWarrior
 {
   int attack;
   int defense;
-  int lvl;
-  int xS;
-  int yS;
+  int xEmu;
+  int yEmu;
   int sWidth = 100;
   int sHeight = 100;
   PImage sImage;

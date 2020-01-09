@@ -1,4 +1,7 @@
-//class EmuFistFighter extends EmuWarrior
-//{
-  
-//}
+class EmuFistFighter extends EmuWarrior
+{
+  public EmuFistFighter()
+  {
+    
+  }
+}

@@ -1,4 +1,3 @@
-
 Tilemap map;
 void setup()
 {
