@@ -9,10 +9,4 @@ class OceanTile extends Tile
     yCord = yPos;
     tImage = loadImage("images/tiles/ocean.jpg");
   }
-  
-  public void imagePrint()
-  {
-    image(tImage,xCord,yCord,tWidth,tHeight);
-  }
-  
 }

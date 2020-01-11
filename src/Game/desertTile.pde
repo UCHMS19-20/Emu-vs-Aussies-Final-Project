@@ -9,7 +9,4 @@ class DesertTile extends Tile
     yCord = yPos;
     tImage = loadImage("images/tiles/desert.jpg");
   }
-  
-
-  
 }

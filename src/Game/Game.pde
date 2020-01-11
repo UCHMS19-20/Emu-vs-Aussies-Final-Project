@@ -5,7 +5,6 @@ void setup()
    
     map = new AusMap(3,7); 
     map.makeMatrix();
-    map.mapDisplay();
 }
 
 void draw()

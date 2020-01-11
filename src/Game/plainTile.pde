@@ -9,10 +9,4 @@ class PlainTile extends Tile
     yCord = yPos;
     tImage = loadImage("images/tiles/plain.jpg");
   }
-  
-  public void imagePrint()
-  {
-    image(tImage,xCord,yCord,tWidth,tHeight);
-  }
-  
 }

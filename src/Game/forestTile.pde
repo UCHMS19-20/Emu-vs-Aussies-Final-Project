@@ -9,10 +9,4 @@ class ForestTile extends Tile
     yCord = yPos;
     tImage = loadImage("images/tiles/forest.jpg");
   }
-  
-  public void imagePrint()
-  {
-    image(tImage,xCord,yCord,tWidth,tHeight);
-  }
-  
 }
