@@ -10,6 +10,7 @@ class AusMap extends Tilemap
   {
     rows = rowNum;
     cols = colNum;
+    makeMatrix();
   }
   
   public void mapDisplay()
@@ -53,7 +54,6 @@ class AusMap extends Tilemap
         {
           terrainList[i][j] = new WhiteTile(x,y);
         }
-
         x+=130;
       }
       y+=130;

@@ -1,23 +1,30 @@
 class EmuFistFighter extends EmuWarrior
 {
- public EmuFistFighter(int attack, int hp, int x, int y, int eWidth, int eHeight)
- {
-   this.eAttack = attack;
-   this.eHp = hp;
-   this.xEmu = x;
-   this.yEmu = y;
-   this.eWidth = eWidth;
-   this.eHeight = eHeight;
-   this.eImage = loadImage("images/characters/emu.jpg");
- }
- imagePrint()
- {
-    image(eImage,xEmu,yEmu,eWidth,eHeight);
- }
- 
- void mouseClicked() {
-  
-}
+    int eWidth = 100;
+    int eHeight = 100;
+    public EmuFistFighter( int row, int col, Tilemap tilemap)
+    {
+        this.row = row;
+        this.col = col;
+        this.tile = tilemap.terrainList[row][col];
+        this.xEmu = this.tile.xCord;
+        this.yEmu = this.tile.yCord;
+        this.eWidth = eWidth;
+        this.eHeight = eHeight;
+        this.eImage = loadImage("images/characters/emu.jpg");
+    }
+    public void imagePrint()
+    {
+        image(eImage,xEmu,yEmu,eWidth,eHeight);
+    }
 
-
+    public void move()
+    {
+        row ++;
+        col ++;
+        tile = tilemap.terrainList[row][col];
+        xEmu = tile.xCord;
+        yEmu = tile.yCord;
+        image(eImage,xEmu,yEmu,eWidth,eHeight);
+    }
 }
