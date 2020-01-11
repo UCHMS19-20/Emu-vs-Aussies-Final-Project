@@ -7,8 +7,8 @@ abstract class Tile
   int tWidth = 130;
   int tHeight = 130;
  
-  public void imagePrint()
+ public void imagePrint()
   {
-    image(tImage,xCord,yCord);
+    image(tImage,xCord,yCord,tWidth,tHeight);
   }
 }

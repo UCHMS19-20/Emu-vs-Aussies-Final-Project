@@ -10,9 +10,6 @@ class DesertTile extends Tile
     tImage = loadImage("images/tiles/desert.jpg");
   }
   
-  public void imagePrint()
-  {
-    image(tImage,xCord,yCord,tWidth,tHeight);
-  }
+
   
 }
