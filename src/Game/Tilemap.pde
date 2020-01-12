@@ -7,5 +7,11 @@ abstract class Tilemap
   public abstract void mapDisplay();
   
   public abstract void makeMatrix();
+   public int rowNum(){
+    return rows;
+  }
+  public int colNum(){
+    return cols;
+  }
   
 }

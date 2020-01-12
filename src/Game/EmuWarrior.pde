@@ -12,5 +12,5 @@ abstract class EmuWarrior
   
   
     public abstract void imagePrint();
-    public abstract void move();
+    public abstract void move(String letter);
 }

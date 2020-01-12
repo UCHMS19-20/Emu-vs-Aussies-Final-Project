@@ -18,22 +18,32 @@ class EmuFistFighter extends EmuWarrior
         image(eImage,xEmu,yEmu,eWidth,eHeight);
     }
 
-    public void move(key)
+    public void move(String theKey)
     {
-        switch(key)
+        switch(theKey)
         {
             case "w":
-                if(row>0)
-                row--
+                if(row>0){
+                row--;
+                }
+                break;
             case "s":
-                if(row<map.rowNum())
-                row++
+                if(row<map.rowNum()){
+                row++;
+                }
+                break;
             case "a":
-                if(col>0)
+                if(col>0){
                 col--;
+                }
+                break;
             case "d":
-                if(col<colNum)
-                col++;   
+                if(col<map.colNum()){
+                col++;
+                }
+                break;   
+            default:
+                break;
         }
 
         row ++;

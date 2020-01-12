@@ -52,11 +52,5 @@ class AusMap extends Tilemap
       x = 0;
     }
   }
-  public int rowNum(){
-    return rows;
-  }
-  public int colNum(){
-    return cols;
-  }
   
 }
