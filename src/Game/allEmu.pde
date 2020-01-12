@@ -1,10 +1,9 @@
 public class allEmu
 {
-    public ArrayList<Emu> emuList;
-
+    public ArrayList<Emu> emuList = new ArrayList<Emu>(0);
+    
     public allEmu()
     {
-        emuList = new ArrayList<Emu>(0);
     }
     public void update()
     {
@@ -17,8 +16,8 @@ public class allEmu
     {
         for(int i = 0; i < emuList.size(); i++){
 
-            if(( x <emuList.get(i).getX()) && (x> (emuList.get(i).get(x) +emu.emuList.get(i).getWidth()))
-            && (x <emuList.get(i).getY()) && (x> (emuList.get(i).get(x) +emu.emuList.get(i).getHeight())))
+            if(( x <emuList.get(i).getX()) && (x> (emuList.get(i).getX() +emu.emuList.get(i).getWidth()))
+            && (x <emuList.get(i).getY()) && (x> (emuList.get(i).getY() +emu.emuList.get(i).getHeight())))
                 {
                     setSelected(true);
                 }

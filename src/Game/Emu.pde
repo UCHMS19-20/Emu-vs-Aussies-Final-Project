@@ -12,22 +12,22 @@ abstract class Emu extends aCharacter
     Tile tile;
     Tilemap tileMap;
     PImage eImage;
-    public getX(){
+    public int getX(){
         return xEmu;
     }
-    public getY(){
+    public int getY(){
         return yEmu;
     }
-    public getWidth(){
+    public int getWidth(){
         return width;
     }
-    public getHeight(){
+    public int getHeight(){
         return height;
     }
-    public getSelected(){
+    public boolean getSelected(){
         return selected;
     }
-    public setSelected(boolean select)
+    public void setSelected(boolean select)
     {
         this.selected = select;
     }

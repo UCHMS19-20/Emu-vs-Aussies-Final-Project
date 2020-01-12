@@ -23,7 +23,7 @@ void draw()
 void keyPressed()
 {
     String letter = Character.toString(key);
-    allEmu.moveChooser(letter);
+    emus.moveChooser(letter);
 }
 void mouseClicked()
 {
