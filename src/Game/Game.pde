@@ -12,9 +12,11 @@ void draw()
 {
     map.mapDisplay();
     emu.imagePrint();
+    if(keyPressed)
+    {
+       if (key == 'b' || key == 'B') {
+        System.out.println(" whats this");
+    }
+    }
+}
 
-}
-void keyPressed()
-{
-    emu.move(); 
-}

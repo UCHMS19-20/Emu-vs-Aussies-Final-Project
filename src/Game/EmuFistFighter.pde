@@ -18,14 +18,28 @@ class EmuFistFighter extends EmuWarrior
         image(eImage,xEmu,yEmu,eWidth,eHeight);
     }
 
-    public void move()
+    public void move(key)
     {
+        switch(key)
+        {
+            case "w":
+                if(row>0)
+                row--
+            case "s":
+                if(row<map.rowNum())
+                row++
+            case "a":
+                if(col>0)
+                col--;
+            case "d":
+                if(col<colNum)
+                col++;   
+        }
+
         row ++;
         col ++;
         tile = map.terrainList[row][col];
         xEmu = tile.xCord;
         yEmu = tile.yCord;
-        image(eImage,xEmu,yEmu,eWidth,eHeight);
-        System.out.println("OWO whats this");
     }
 }
