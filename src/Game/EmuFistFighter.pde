@@ -2,11 +2,11 @@ class EmuFistFighter extends EmuWarrior
 {
     int eWidth = 100;
     int eHeight = 100;
-    public EmuFistFighter( int row, int col, Tilemap tilemap)
+    public EmuFistFighter( int row, int col)
     {
         this.row = row;
         this.col = col;
-        this.tile = tilemap.terrainList[row][col];
+        this.tile = map.terrainList[row][col];
         this.xEmu = this.tile.xCord;
         this.yEmu = this.tile.yCord;
         this.eWidth = eWidth;
@@ -22,9 +22,10 @@ class EmuFistFighter extends EmuWarrior
     {
         row ++;
         col ++;
-        tile = tilemap.terrainList[row][col];
+        tile = map.terrainList[row][col];
         xEmu = tile.xCord;
         yEmu = tile.yCord;
         image(eImage,xEmu,yEmu,eWidth,eHeight);
+        System.out.println("OWO whats this");
     }
 }

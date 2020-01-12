@@ -5,7 +5,7 @@ void setup()
     size(1200,900);
    
     map = new AusMap(3,7); 
-    emu = new EmuFistFighter(0,0,map);
+    emu = new EmuFistFighter(0,0);
 }
 
 void draw()
@@ -14,7 +14,7 @@ void draw()
     emu.imagePrint();
 
 }
-// void keyPressed()
-// {
-//     emu.move(); 
-// }
+void keyPressed()
+{
+    emu.move(); 
+}
