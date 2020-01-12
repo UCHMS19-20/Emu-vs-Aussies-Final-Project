@@ -28,7 +28,7 @@ class EmuFistFighter extends EmuWarrior
                 }
                 break;
             case "s":
-                if(row<map.rowNum()){
+                if(row<map.rowNum()-1){
                 row++;
                 }
                 break;
@@ -38,16 +38,13 @@ class EmuFistFighter extends EmuWarrior
                 }
                 break;
             case "d":
-                if(col<map.colNum()){
+                if(col<map.colNum()-1){
                 col++;
                 }
                 break;   
             default:
                 break;
         }
-
-        row ++;
-        col ++;
         tile = map.terrainList[row][col];
         xEmu = tile.xCord;
         yEmu = tile.yCord;

@@ -12,9 +12,10 @@ void draw()
 {
     map.mapDisplay();
     emu.imagePrint();
-    if(keyPressed){
-        String letter = Character.toString(key);
-            emu.move(letter);
-    }
 }
 
+void keyPressed()
+{
+    String letter = Character.toString(key);
+    emu.move(letter);
+}
