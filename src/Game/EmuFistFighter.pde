@@ -1,21 +1,19 @@
-class EmuFistFighter extends EmuWarrior
+class EmuFistFighter extends Emu
 {
-    int eWidth = 100;
-    int eHeight = 100;
+    int width = 100;
+    int height = 100;
     public EmuFistFighter( int row, int col)
     {
         this.row = row;
         this.col = col;
         this.tile = map.terrainList[row][col];
-        this.xEmu = this.tile.xCord;
-        this.yEmu = this.tile.yCord;
-        this.eWidth = eWidth;
-        this.eHeight = eHeight;
+        this.xEmu = this.tile.xCord + 15;
+        this.yEmu = this.tile.yCord + 15;
         this.eImage = loadImage("images/characters/emu.jpg");
     }
     public void imagePrint()
     {
-        image(eImage,xEmu,yEmu,eWidth,eHeight);
+        image(eImage,xEmu,yEmu,width,height);
     }
 
     public void move(String theKey)
@@ -46,7 +44,7 @@ class EmuFistFighter extends EmuWarrior
                 break;
         }
         tile = map.terrainList[row][col];
-        xEmu = tile.xCord;
-        yEmu = tile.yCord;
+        xEmu = tile.xCord+15;
+        yEmu = tile.yCord+15;
     }
 }
