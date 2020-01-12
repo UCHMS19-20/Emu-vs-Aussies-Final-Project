@@ -10,7 +10,7 @@ void setup()
    
     map = new AusMap(3,7); 
     emus = new allEmu();
-    emu = new EmuFistFighter(0,0);
+    // emu = new EmuFistFighter(0,0);
 }
 
 void draw()
@@ -23,11 +23,11 @@ void draw()
 void keyPressed()
 {
     String letter = Character.toString(key);
-    emu.move(letter);
+    allEmu.moveChooser(letter);
 }
 void mouseClicked()
 {
     emus.emuList.add(new EmuFistFighter(i,j));
-    System.out.println("UWU");
+    emus.select(mouseX,mouseY);
    
 }

@@ -1,9 +1,10 @@
 class EmuFistFighter extends Emu
 {
-    int width = 100;
-    int height = 100;
+
     public EmuFistFighter( int row, int col)
     {
+        this.width = 100;
+        this.height = 100;
         this.row = row;
         this.col = col;
         this.tile = map.terrainList[row][col];
