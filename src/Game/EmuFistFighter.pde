@@ -40,7 +40,7 @@ class EmuFistFighter extends Emu
                 if(col<map.colNum()-1){
                 col++;
                 }
-                break;   
+                break;
             default:
                 break;
         }

@@ -1,5 +1,5 @@
 public Tilemap map;
-public Emu emu;
+// public Emu emu;
 public allEmu emus;
 int i = 0;
 int j = 0;
@@ -16,18 +16,28 @@ void setup()
 void draw()
 {
     map.mapDisplay();
-    emu.imagePrint();
+    // emu.imagePrint();
     emus.update();
 }
 
 void keyPressed()
 {
     String letter = Character.toString(key);
-    emus.moveChooser(letter);
+    if (!letter.equals("z"))
+    {
+        emus.moveChooser(letter);
+    }
+    else if(letter.equals("z"))
+    {
+        emus.emuList.add(new EmuFistFighter(0,0));
+    }
 }
+
 void mouseClicked()
 {
-    emus.emuList.add(new EmuFistFighter(i,j));
-    emus.select(mouseX,mouseY);
-   
+    // emus.emuList.add(new EmuFistFighter(0,0));
+    int x = mouseX;
+    int y = mouseY;
+    emus.select(x,y);
+    
 }
