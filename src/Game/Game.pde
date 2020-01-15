@@ -8,13 +8,14 @@ void setup()
 {
     size(1200,900);
    
-    map = new AusMap(3,7); 
+    map = new AusMap(8,8); 
     emus = new allEmu();
     // emu = new EmuFistFighter(0,0);
 }
 
 void draw()
 {
+    background(0,0,0);
     map.mapDisplay();
     // emu.imagePrint();
     emus.update();

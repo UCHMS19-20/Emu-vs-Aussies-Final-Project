@@ -3,8 +3,15 @@ class AusMap extends Tilemap
   String location = "New Zealand forest";
   int x = 0;
   int y = 0;
-
-  int []numT = {1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1};
+//1: Plain 2:Forest 3: Mountain4:  Desert 5: Ocean 6: White
+  int []numT = {5,5,5,5,5,4,1,1,
+                5,5,5,4,4,4,1,1,
+                5,4,4,4,1,1,1,1,
+                5,4,4,1,1,2,2,2,
+                5,4,4,2,2,2,2,2,
+                5,4,4,2,2,2,3,3,
+                4,4,2,2,3,3,3,3,
+                4,2,2,2,3,3,3,3};
   
   public AusMap(int rowNum,int colNum)
   {
@@ -46,9 +53,9 @@ class AusMap extends Tilemap
         else if(numT[i*(cols)+(j+1)-1] == 6){
           terrainList[i][j] = new WhiteTile(x,y);
         }
-        x+=130;
+        x+=110;
       }
-      y+=130;
+      y+=110;
       x = 0;
     }
   }
