@@ -16,36 +16,4 @@ class EmuFistFighter extends Emu
     {
         image(eImage,xEmu,yEmu,width,height);
     }
-
-    public void move(String theKey)
-    {
-        switch(theKey)
-        {
-            case "w":
-                if(row>0){
-                row--;
-                }
-                break;
-            case "s":
-                if(row<map.rowNum()-1){
-                row++;
-                }
-                break;
-            case "a":
-                if(col>0){
-                col--;
-                }
-                break;
-            case "d":
-                if(col<map.colNum()-1){
-                col++;
-                }
-                break;
-            default:
-                break;
-        }
-        tile = map.terrainList[row][col];
-        xEmu = tile.xCord+15;
-        yEmu = tile.yCord+15;
-    }
 }

@@ -26,7 +26,7 @@ void keyPressed()
     String letter = Character.toString(key);
     if (!letter.equals("z"))
     {
-        emus.moveChooser(letter);
+        emus.move(letter);
     }
     else if(letter.equals("z"))
     {
@@ -36,9 +36,7 @@ void keyPressed()
 
 void mouseClicked()
 {
-    // emus.emuList.add(new EmuFistFighter(0,0));
     int x = mouseX;
     int y = mouseY;
     emus.select(x,y);
-    
 }

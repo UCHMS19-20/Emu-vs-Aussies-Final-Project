@@ -1,10 +1,12 @@
 public class allEmu
 {
     public ArrayList<Emu> emuList;
+    int selectedIndex;
 
     public allEmu()
     {
         emuList = new ArrayList<Emu>(0);
+        selectedIndex = 0;
     }
     public void update()
     {
@@ -16,30 +18,46 @@ public class allEmu
     }
     public void select(int x, int y)
     {   
-        // System.out.println("The x and y of mouse is"x + " and" + y);
-        // System.out.println(emuList.get(0).getX() + " .. " + emuList.get(0).getY() );
         for(int i = 0; i < emuList.size(); i++){
 
             if(( x >emuList.get(i).getX()) && (x< (emuList.get(i).getX() +emuList.get(i).getWidth()))
             && (y >emuList.get(i).getY()) && (y< (emuList.get(i).getY() +emuList.get(i).getHeight())))
-                {
-                    emuList.get(i).setSelected(true);
-                }
-
-            else{
-                emuList.get(i).setSelected(false);
+            {
+                // emuList.get(i).setSelected(true);
+                selectedIndex = i;
             }
         }
     }
-    public void moveChooser(String theKey)
-    {
-        System.out.println("OWO1");
-        for (int i = 0; i<emuList.size(); i++)
+    public void move(String theKey)
+    { 
+        Emu emu = emuList.get(selectedIndex);
+        switch(theKey)
         {
-            if(emuList.get(i).getSelected() == true){
-                System.out.println("OWO Select");
-                emuList.get(i).move(theKey);
-            }
+            case "w":
+                if(emu.row>0){
+                emu.row--;
+                }
+                break;
+            case "s":
+                if(emu.row<map.rowNum()-1){
+                emu.row++;
+                }
+                break;
+            case "a":
+                if(emu.col>0){
+                emu.col--;
+                }
+                break;
+            case "d":
+                if(emu.col<map.colNum()-1){
+                emu.col++;
+                }
+                break;
+            default:
+                break;
         }
-    }   
+        emu.tile = map.terrainList[emu.row][emu.col];
+        emu.xEmu = emu.tile.xCord+15;
+        emu.yEmu = emu.tile.yCord+15;
+    }
 }

@@ -8,7 +8,6 @@ abstract class Emu extends aCharacter
     int col;
     int width;
     int height;
-    boolean selected = false;
     Tile tile;
     Tilemap tileMap;
     PImage eImage;
@@ -24,15 +23,6 @@ abstract class Emu extends aCharacter
     public int getHeight(){
         return height;
     }
-    public boolean getSelected(){
-        return selected;
-    }
-    public void setSelected(boolean select)
-    {
-        this.selected = select;
-    }
-    public abstract void imagePrint();
-    public abstract void move(String letter);
 
-    
+    public abstract void imagePrint();
 }
