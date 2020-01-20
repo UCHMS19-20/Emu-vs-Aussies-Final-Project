@@ -1,30 +1,36 @@
 public Tilemap map;
 public allEmu emus;
 public Human human;
+public allHuman humans;
+
 
 void setup()
 {
-    size(900,900);
+    size(700,700);
    
-    map = new AusMap(9,9); 
+    map = new AusMap(7,7); 
     emus = new allEmu();
-    human = new PitchForkHuman(8,8);
+    human = new PitchForkHuman(6,6);
 }
 
 void draw()
 {
     background(0,0,0);
     map.mapDisplay();
-    emus.update();
+    emus.updateImage();
     human.imagePrint();
 }
 
 void keyPressed()
 {
     String letter = Character.toString(key);
-    if (!letter.equals("z"))
+    if (letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w"))
     {
         emus.move(letter);
+    }
+    else if(letter.equals("k"))
+    { 
+        humans.fullTurn();
     }
     else if(letter.equals("z"))
     {

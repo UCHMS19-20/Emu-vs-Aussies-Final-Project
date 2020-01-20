@@ -9,7 +9,7 @@ public class allEmu
         selectedIndex = 0;
     }
 
-    public void update()
+    public void updateImage()
     {
         for(int i = 0; i < emuList.size(); i++)
         {

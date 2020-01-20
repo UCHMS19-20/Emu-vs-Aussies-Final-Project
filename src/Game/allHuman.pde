@@ -1,25 +1,31 @@
 public class allHuman
 {
     public ArrayList<Human> humanList;
-    public int selectedIndex;
 
-    public allHuman()
-    {
+    public allHuman(){
         humanList = new ArrayList<Human>(0);
-        selectedIndex = 0;
     }
 
-    public void update()
-    {
+    public void turnIncrement(){
+        for(int i = 0; i < humanList.size(); i++){
+            humanList.get(i).turn +=1;
+        }
+    }
+
+    public void updateImage(){
         for(int i = 0; i < humanList.size(); i++)
         {
             humanList.get(i).imagePrint();
         }
     }
+
+    public void fullTurn(){
+
+    }
     
     public void newHuman()
     {
-        humanList.add(new PitchForkHuman(7,7));
+        humanList.add(new PitchForkHuman(6,6));
     }
 
     public void move()
