@@ -1,4 +1,4 @@
-abstract class Emu extends aCharacter
+abstract class Emu
 {
     int attack;
     int hp;
