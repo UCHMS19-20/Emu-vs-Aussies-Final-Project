@@ -2,6 +2,7 @@ abstract class Human
 {    
     int attack;
     int hp;
+    int currentHp;
     int pathLength;
     int typePath;
     int xHuman;

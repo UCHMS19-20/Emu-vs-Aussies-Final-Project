@@ -3,7 +3,7 @@ public allEmu emus;
 public allHuman humans;
 public Coin coin;
 
-//0: Game| 1: Win| 2: Lose
+//0: Game| 1: Win| 2: Lose| 3: Introduction
 int state = 0;
 
 //Time Counter
@@ -17,8 +17,6 @@ void setup()
     emus = new allEmu();
     humans = new allHuman();
     frameRate(30);
-
-
 }
 
 void draw()
@@ -41,6 +39,8 @@ void draw()
         case 2:
             lose();
             break;
+
+        case 3:
 
         default:
             break;

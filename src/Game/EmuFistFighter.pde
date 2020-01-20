@@ -5,6 +5,7 @@ class EmuFistFighter extends Emu
     {
         this.attack = 50;
         this.hp = 100;
+        this.currentHp = hp;
         this.width = 75;
         this.height = 75;
         this.row = row;
@@ -20,8 +21,10 @@ class EmuFistFighter extends Emu
     }
     public void imagePrint()
     {   
-        if(alive == true){
+        if(alive == true){  
             image(eImage,xEmu,yEmu,width,height);
-        }    
+            fill(255,0,0);
+            rect(xEmu, yEmu,currentHp *0.75, 5); 
+        }
     }
 }

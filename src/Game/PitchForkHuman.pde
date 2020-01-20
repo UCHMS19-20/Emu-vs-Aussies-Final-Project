@@ -7,6 +7,7 @@ class PitchForkHuman extends Human
         this.pathLength = 0;
         this.attack = 100;
         this.hp = 100;
+        this.currentHp = hp;
         this.width = 75;
         this.height = 75;
         this.row = 0;
@@ -29,6 +30,8 @@ class PitchForkHuman extends Human
     public void imagePrint(){
         if(alive == true){
             image(hImage,xHuman,yHuman,width,height);
+            fill(250,0,0);
+            rect(xHuman, yHuman,currentHp *0.75, 5); 
         }
     }
 }

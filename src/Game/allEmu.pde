@@ -101,12 +101,12 @@ public class allEmu
     }
 
     public void fight(Human human, Emu emu,int i ,int j){
-        human.hp -= emu.attack;
-        emu.hp -= human.attack;
-        if(human.hp<= 0){
+        human.currentHp -= emu.attack;
+        emu.currentHp -= human.attack;
+        if(human.currentHp<= 0){
             humans.humanList.get(j).alive = false;
         }
-        if(emu.hp<= 0){
+        if(emu.currentHp<= 0){
             emuList.get(i).alive = false;
         }
     }

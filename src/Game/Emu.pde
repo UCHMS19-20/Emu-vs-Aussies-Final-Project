@@ -2,6 +2,7 @@ abstract class Emu
 {
     int attack;
     int hp;
+    int currentHp;
     int xEmu;
     int yEmu;
     int row;
@@ -15,6 +16,7 @@ abstract class Emu
     PImage eImage;
     String name;
     boolean alive;
+    int healthBarLength;
 
 
     public abstract void imagePrint();
