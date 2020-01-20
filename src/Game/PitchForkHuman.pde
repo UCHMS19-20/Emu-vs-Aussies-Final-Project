@@ -22,7 +22,6 @@ class PitchForkHuman extends Human
     {
         float path = random(1,8);
         int intPath = (int)path;
-        // System.out.println(intPath);
         return intPath;
     }
 

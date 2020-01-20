@@ -5,10 +5,8 @@ public allHuman humans;
 //0: Game| 1: Win| 2: Lose
 int state = 0;
 
+//Time Counter
 int winLoseCounter = 0;
-
-
-
 
 void setup()
 {
@@ -30,6 +28,7 @@ void draw()
             map.mapDisplay();
             emus.updateImage();
             humans.updateImage();
+            emus.humanEmuCollision();
             break;
 
         case 1:
@@ -43,7 +42,6 @@ void draw()
         default:
             break;
     }
-
 }
 
 void keyPressed()

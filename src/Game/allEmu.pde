@@ -3,6 +3,11 @@ public class allEmu
     public ArrayList<Emu> emuList;
     int selectedIndex;
 
+    //0: no collision 1: emu collision 2: human collision
+    int collisionState;
+
+
+
     public allEmu()
     {
         emuList = new ArrayList<Emu>(0);
@@ -66,14 +71,35 @@ public class allEmu
         emu.yEmu = emu.tile.yCord+15;
     }
 
-    public boolean sameEmuLoc(int row, int col)
-    {
+    public boolean sameEmuLoc(int row, int col){
+        //check for emu-emu collision
         for(int i = 0; i< emuList.size(); i++){
-            if((row == emuList.get(i).row) && (col == emuList.get(i).col) &&!(selectedIndex == i))
-            {
-                return true;
+            if((row == emuList.get(i).row) && (col == emuList.get(i).col) &&!(selectedIndex == i)){
+                return false
             }
         }
-        return false;
+        return true;
+    }
+
+    public void humanEmuCollision(){
+        for(int i = 0; i< emuList.size(); i++){
+            for(intj = 0; j<humans.humanList.size(); j++){
+                if(emuList.get(i).row == humans.humanList.get(i).row && emuList.get(i).col == humans.humanList.get(i).col){
+                    fight(human.humanList.get(j), emuList.get(i),i, j);
+                }
+            }
+
+        }
+    }
+
+    public void fight(Human human, Emu emu,int i ,int j){
+        human.hp -= emu.attack;
+        emu.hp -= human.attack;
+        if(human.hp<= 0){
+            humans.humanList.remove(j);
+        }
+        if(emu.hp<= 0){
+            emuList.remove(i);
+        }
     }
 }
