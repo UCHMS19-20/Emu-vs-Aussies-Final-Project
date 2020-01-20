@@ -1,16 +1,16 @@
 public class allHuman
 {
     public ArrayList<Human> humanList;
-    int [] pathRow1 = {3,2,1,0,0,0,0,0,0,0,1,2,3};
-    int [] pathCol1 = {6,6,6,6,5,4,3,2,1,0,0,0,0};
-    int [] pathRow2 = {2,1,0,0,0,0,0,0,0,1,2,3};
-    int [] pathCol2 = {6,6,6,5,4,3,2,1,0,0,0,0};
-    int [] pathRow3 = {4,5,6,6,6,6,6,6,6,5,4,3};
-    int [] pathCol3 = {6,6,6,5,4,3,2,1,0,0,0,0};
-    int [] pathRow4 = {1,0,0,0,0,0,0,0,1,2,3};
-    int [] pathCol4 = {6,6,5,4,3,2,1,0,0,0,0};
-    int [] pathRow5 = {5,6,6,6,6,6,6,6,5,4,3};
-    int [] pathCol5 = {6,6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow1 = {3,3,3,3,3,3,3};
+    int [] pathCol1 = {6,5,4,3,2,1,0};
+    int [] pathRow2 = {2,2,2,2,2,2,2,3};
+    int [] pathCol2 = {6,5,4,3,2,1,0,0};
+    int [] pathRow3 = {4,4,4,4,4,4,4,3};
+    int [] pathCol3 = {6,5,4,3,2,1,0,0};
+    int [] pathRow4 = {1,1,1,1,1,1,1,2,3};
+    int [] pathCol4 = {6,5,4,3,2,1,0,0,0};
+    int [] pathRow5 = {5,5,5,5,5,5,5,4,3};
+    int [] pathCol5 = {6,5,4,3,2,1,0,0,0};
     int [] pathRow6 = {0,0,0,0,0,0,0,1,2,3};
     int [] pathCol6 = {6,5,4,3,2,1,0,0,0,0};
     int [] pathRow7 = {6,6,6,6,6,6,6,5,4,3};
