@@ -1,8 +1,10 @@
 class PitchForkHuman extends Human
 {
+    int [] pathRow1;
     public PitchForkHuman()
     {
         this.typePath = pathSet();
+        this.pathLength = 0;
         this.attack = 50;
         this.hp = 1000;
         this.width = 75;
@@ -20,7 +22,7 @@ class PitchForkHuman extends Human
     {
         float path = random(1,8);
         int intPath = (int)path;
-        System.out.println(intPath);
+        // System.out.println(intPath);
         return intPath;
     }
 

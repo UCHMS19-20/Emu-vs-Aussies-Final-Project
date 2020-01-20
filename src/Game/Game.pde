@@ -1,8 +1,12 @@
 public Tilemap map;
 public allEmu emus;
-// public Human human;
 public allHuman humans;
-int lose = 0;
+
+//0: Game| 1: Win| 2: Lose
+int state = 0;
+
+int winLoseCounter = 0;
+
 
 
 
@@ -13,24 +17,31 @@ void setup()
     map = new AusMap(7,7); 
     emus = new allEmu();
     humans = new allHuman();
-    // human = new PitchForkHuman(6,6);
+    frameRate(30);
 }
 
 void draw()
-{ 
-    background(0,0,0);
-    map.mapDisplay();
-    emus.updateImage();
-    humans.updateImage();
-     if(humans.lose() == true)
+{
+    stateDeterminer();
+    switch(state)
     {
-        background(60,125,89);
-        delay(250);
-        lose++;
-        if(lose> 20)
-        {
-            exit();
-        }
+        case 0:
+            background(0,0,0);
+            map.mapDisplay();
+            emus.updateImage();
+            humans.updateImage();
+            break;
+
+        case 1:
+            win();
+            break;
+        
+        case 2:
+            lose();
+            break;
+
+        default:
+            break;
     }
 
 }
@@ -57,4 +68,36 @@ void mouseClicked()
     int x = mouseX;
     int y = mouseY;
     emus.select(x,y);
+}
+
+public void stateDeterminer(){
+    //Win
+    for(int i = 0; i < emus.emuList.size(); i++){
+        if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 6){
+            state = 1;
+            System.out.println("win");
+        }
+    }
+    //Lose
+    for(int i = 0; i < humans.humanList.size(); i++){
+        if(humans.humanList.get(i).turn >=(humans.humanList.get(i).pathLength)){
+            state = 2;
+            System.out.println("lose");
+        }
+    }
+}
+public void lose(){
+    background(255,60,100);
+    winLoseCounter ++;
+    if(winLoseCounter >= 300000){
+        exit();
+    }
+}
+public void win(){
+    background(60,250,150);
+    winLoseCounter ++;
+    if(winLoseCounter >= 300000){
+        exit()
+        ;
+    }
 }

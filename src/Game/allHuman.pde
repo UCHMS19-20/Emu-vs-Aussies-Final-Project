@@ -42,7 +42,34 @@ public class allHuman
     public void newHuman()
     {
         humanList.add(new PitchForkHuman());
+        Human human;
+        human = humanList.get(humanList.size()-1);
+        switch(human.typePath)
+        {   
+            case 1:
+                human.pathLength = pathRow1.length;
+                break;
+            case 2:
+                human.pathLength = pathRow2.length;
+                break;
+            case 3:
+                human.pathLength = pathRow3.length;
+                break;
+            case 4:
+                human.pathLength = pathRow4.length;
+                break;
+            case 5:
+                human.pathLength = pathRow5.length;
+                break;
+            case 6:
+                human.pathLength = pathRow6.length;
+                break;
+            case 7:
+                human.pathLength = pathRow7.length;
+                break;
+        }
     }
+        
 
     public void move()
     {   Human human;
@@ -86,13 +113,5 @@ public class allHuman
             human.xHuman = human.tile.xCord+15;
             human.yHuman = human.tile.yCord+15;
         }
-    }
-    public boolean lose(){
-        for(int i = 0; i < humanList.size(); i++){
-            if(humanList.get(i).turn >=6){
-                return true;
-            }
-        }
-        return false;
     }
 }
