@@ -1,6 +1,6 @@
 public Tilemap map;
 public allEmu emus;
-public Human human;
+// public Human human;
 public allHuman humans;
 
 
@@ -10,7 +10,8 @@ void setup()
    
     map = new AusMap(7,7); 
     emus = new allEmu();
-    human = new PitchForkHuman(6,6);
+    humans = new allHuman();
+    // human = new PitchForkHuman(6,6);
 }
 
 void draw()
@@ -18,7 +19,6 @@ void draw()
     background(0,0,0);
     map.mapDisplay();
     emus.updateImage();
-    human.imagePrint();
 }
 
 void keyPressed()
