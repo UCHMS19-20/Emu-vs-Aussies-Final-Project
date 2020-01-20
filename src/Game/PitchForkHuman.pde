@@ -10,7 +10,7 @@ class PitchForkHuman extends Human
         this.currentHp = hp;
         this.width = 75;
         this.height = 75;
-        this.row = 0;
+        this.row = 3;
         this.col = 0;
         this.turn = 0;
         this.tile = map.terrainList[row][col];
@@ -19,6 +19,7 @@ class PitchForkHuman extends Human
         this.yHuman = this.tile.yCord + 13;
         this.hImage = loadImage("images/characters/man.jpg");
         this.alive = true;
+        this.moved = false;
     }
     public int pathSet()
     {

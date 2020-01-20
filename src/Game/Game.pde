@@ -60,6 +60,7 @@ void keyPressed()
     }
     else if(letter.equals("k"))
     {
+        humans.movedFalse();
         humans.fullTurn();
         emus.moveReset();
         coin.endOfRound();

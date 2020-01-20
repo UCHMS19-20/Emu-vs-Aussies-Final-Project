@@ -81,32 +81,55 @@ public class allHuman
             switch(human.typePath)
             {
                 case 1: 
-                    human.row = pathRow1[human.turn];
-                    human.col = pathCol1[human.turn];
+                    if(!(humanCollision(pathRow1[human.turn],pathCol1[human.turn],i))){
+                        human.row = pathRow1[human.turn];
+                        human.col = pathCol1[human.turn];
+                        human.moved = true;
+                    }
                     break;
                 case 2:
-                    human.row = pathRow2[human.turn];
-                    human.col = pathCol2[human.turn];
+                    if(!(humanCollision(pathRow2[human.turn],pathCol2[human.turn],i))){
+                        human.row = pathRow2[human.turn];
+                        human.col = pathCol2[human.turn];
+                        human.moved = true;
+                    }
                     break;
+                
                 case 3:
-                    human.row = pathRow3[human.turn];
-                    human.col = pathCol3[human.turn];
+                    if(!(humanCollision(pathRow3[human.turn],pathCol3[human.turn],i))){
+                        human.row = pathRow3[human.turn];
+                        human.col = pathCol3[human.turn];
+                        human.moved = true;
+                    }
                     break;
                 case 4:
-                    human.row = pathRow4[human.turn];
-                    human.col = pathCol4[human.turn];
+                    if(!(humanCollision(pathRow4[human.turn],pathCol4[human.turn],i))){
+                        human.row = pathRow4[human.turn];
+                        human.col = pathCol4[human.turn];
+                        human.moved = true;
+                    }
                     break;
                 case 5:
-                    human.row = pathRow5[human.turn];
-                    human.col = pathCol5[human.turn];
+                    if(!(humanCollision(pathRow5[human.turn],pathCol5[human.turn],i))){
+                        human.row = pathRow5[human.turn];
+                        human.col = pathCol5[human.turn];
+                        human.moved = true;
+                        
+                    }   
                     break;
                 case 6:
-                    human.row = pathRow6[human.turn];
-                    human.col = pathCol6[human.turn];
+                    if(!(humanCollision(pathRow6[human.turn],pathCol6[human.turn],i))){
+                        human.row = pathRow6[human.turn];
+                        human.col = pathCol6[human.turn];
+                        human.moved = true;
+                    }
                     break;
                 case 7:
-                    human.row = pathRow7[human.turn];
-                    human.col = pathCol7[human.turn];
+                    if(!(humanCollision(pathRow7[human.turn],pathCol7[human.turn],i))){
+                        human.row = pathRow7[human.turn];
+                        human.col = pathCol7[human.turn];
+                        human.moved = true;
+                    }
                     break;
                 default:
                     break;   
@@ -114,6 +137,20 @@ public class allHuman
             human.tile = map.terrainList[human.row][human.col];
             human.xHuman = human.tile.xCord+15;
             human.yHuman = human.tile.yCord+15;
+        }
+    }
+    public boolean humanCollision(int row,int col, int index){
+        for(int i = 0;i< humanList.size();i++){
+             if(row == humanList.get(i).row && col == humanList.get(i).col){
+                 System.out.println("true");
+                 return true;
+             }
+        }
+        return false;
+    }
+    public void movedFalse(){
+        for(int i = 0; i< humanList.size();i++){
+            humanList.get(i).moved = false;
         }
     }
 }
