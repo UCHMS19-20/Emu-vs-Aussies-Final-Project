@@ -11,18 +11,6 @@ abstract class Emu
     Tile tile;
     Tilemap tileMap;
     PImage eImage;
-    public int getX(){
-        return xEmu;
-    }
-    public int getY(){
-        return yEmu;
-    }
-    public int getWidth(){
-        return width;
-    }
-    public int getHeight(){
-        return height;
-    }
 
     public abstract void imagePrint();
 }

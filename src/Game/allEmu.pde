@@ -21,8 +21,8 @@ public class allEmu
     {   
         for(int i = 0; i < emuList.size(); i++){
 
-            if((x >emuList.get(i).xEmu) && (x< (emuList.get(i).xEmu +emuList.get(i).getWidth()))
-            && (y >emuList.get(i).yEmu && (y< (emuList.get(i).yEmu +emuList.get(i).getHeight()))))
+            if((x >emuList.get(i).xEmu) && (x< (emuList.get(i).xEmu +emuList.get(i).width)
+            && (y >emuList.get(i).yEmu) && (y< (emuList.get(i).yEmu +emuList.get(i).height))))
             {
                 selectedIndex = i;
             }
