@@ -12,6 +12,7 @@ abstract class Emu
     Tilemap tileMap;
     PImage eImage;
     String name;
+    boolean alive;
 
     public abstract void imagePrint();
 }

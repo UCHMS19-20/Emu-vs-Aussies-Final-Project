@@ -15,6 +15,7 @@ abstract class Human
     Tile tile;
     Tilemap tileMap;
     PImage hImage;
+    boolean alive;
 
     public abstract void imagePrint();
 }

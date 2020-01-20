@@ -27,7 +27,7 @@ public class allEmu
         for(int i = 0; i < emuList.size(); i++){
 
             if((x >emuList.get(i).xEmu) && (x< (emuList.get(i).xEmu +emuList.get(i).width)
-            && (y >emuList.get(i).yEmu) && (y< (emuList.get(i).yEmu +emuList.get(i).height))))
+            && (y >emuList.get(i).yEmu) && (y< (emuList.get(i).yEmu +emuList.get(i).height)) && emuList.get(i).alive == true))
             {
                 selectedIndex = i;
             }
@@ -44,7 +44,7 @@ public class allEmu
         switch(theKey)
         {
             case "w":
-                if(emu.row>0 && !(sameEmuLoc(++tempRow , tempCol))){
+                if(emu.row>0 && !(sameEmuLoc(--tempRow , tempCol))){
                 emu.row--;
                 }
                 break;
@@ -74,18 +74,21 @@ public class allEmu
     public boolean sameEmuLoc(int row, int col){
         //check for emu-emu collision
         for(int i = 0; i< emuList.size(); i++){
-            if((row == emuList.get(i).row) && (col == emuList.get(i).col) &&!(selectedIndex == i)){
-                return false
+            if((row == emuList.get(i).row) && (col == emuList.get(i).col) &&!(selectedIndex == i)
+            &&(emuList.get(i).alive == true)&&(emuList.get(selectedIndex).alive == true)){
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public void humanEmuCollision(){
         for(int i = 0; i< emuList.size(); i++){
-            for(intj = 0; j<humans.humanList.size(); j++){
-                if(emuList.get(i).row == humans.humanList.get(i).row && emuList.get(i).col == humans.humanList.get(i).col){
-                    fight(human.humanList.get(j), emuList.get(i),i, j);
+            for(int j = 0; j <humans.humanList.size(); j++){
+                System.out.println(emuList.size()+ "" + humans.humanList.size());
+                if(emuList.get(i).row == humans.humanList.get(j).row && emuList.get(i).col == humans.humanList.get(j).col
+                && emuList.get(i).alive == true && humans.humanList.get(j).alive == true){
+                    fight(humans.humanList.get(j), emuList.get(i),i, j);
                 }
             }
 
@@ -96,10 +99,10 @@ public class allEmu
         human.hp -= emu.attack;
         emu.hp -= human.attack;
         if(human.hp<= 0){
-            humans.humanList.remove(j);
+            humans.humanList.get(j).alive = false;
         }
         if(emu.hp<= 0){
-            emuList.remove(i);
+            emuList.get(i).alive = false;
         }
     }
 }

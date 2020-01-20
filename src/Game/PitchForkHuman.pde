@@ -5,8 +5,8 @@ class PitchForkHuman extends Human
     {
         this.typePath = pathSet();
         this.pathLength = 0;
-        this.attack = 50;
-        this.hp = 1000;
+        this.attack = 100;
+        this.hp = 100;
         this.width = 75;
         this.height = 75;
         this.row = 0;
@@ -17,6 +17,7 @@ class PitchForkHuman extends Human
         this.xHuman = this.tile.xCord + 13;
         this.yHuman = this.tile.yCord + 13;
         this.hImage = loadImage("images/characters/man.jpg");
+        this.alive = true;
     }
     public int pathSet()
     {
@@ -26,6 +27,8 @@ class PitchForkHuman extends Human
     }
 
     public void imagePrint(){
-        image(hImage,xHuman,yHuman,width,height);
+        if(alive == true){
+            image(hImage,xHuman,yHuman,width,height);
+        }
     }
 }
