@@ -87,4 +87,12 @@ public class allHuman
             human.yHuman = human.tile.yCord+15;
         }
     }
+    public boolean lose(){
+        for(int i = 0; i < humanList.size(); i++){
+            if(humanList.get(i).turn >=6){
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -2,6 +2,8 @@ public Tilemap map;
 public allEmu emus;
 // public Human human;
 public allHuman humans;
+int lose = 0;
+
 
 
 void setup()
@@ -15,11 +17,21 @@ void setup()
 }
 
 void draw()
-{
+{ 
     background(0,0,0);
     map.mapDisplay();
     emus.updateImage();
     humans.updateImage();
+     if(humans.lose() == true)
+    {
+        background(60,125,89);
+        delay(250);
+        lose++;
+        if(lose> 20)
+        {
+            exit();
+        }
+    }
 
 }
 
