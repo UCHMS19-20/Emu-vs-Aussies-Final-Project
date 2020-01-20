@@ -1,6 +1,7 @@
 public Tilemap map;
 public allEmu emus;
 public allHuman humans;
+public Coin coin;
 
 //0: Game| 1: Win| 2: Lose
 int state = 0;
@@ -10,8 +11,8 @@ int winLoseCounter = 0;
 
 void setup()
 {
-    size(700,700);
-   
+    size(700,800);
+    coin = new Coin();
     map = new AusMap(7,7); 
     emus = new allEmu();
     humans = new allHuman();
@@ -24,11 +25,12 @@ void draw()
     switch(state)
     {
         case 0:
-            background(0,0,0);
+            background(250,250,250);
             map.mapDisplay();
             emus.updateImage();
             humans.updateImage();
             emus.humanEmuCollision();
+            coin.printAllVisuals();
             break;
 
         case 1:
@@ -55,10 +57,13 @@ void keyPressed()
     {
         humans.fullTurn();
         emus.moveReset();
+        coin.endOfRound();
     }
     else if(letter.equals("z"))
-    {
-        emus.emuList.add(new EmuFistFighter(4,0));
+    {   if(coin.coinAmount-coin.emuCost>=0){
+            emus.emuList.add(new EmuFistFighter(3,0));
+            coin.emuPurchase();
+        }   
     }
 }
 

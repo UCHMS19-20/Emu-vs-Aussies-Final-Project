@@ -22,7 +22,9 @@ public class allHuman
 
     public void turnIncrement(){
         for(int i = 0; i < humanList.size(); i++){
-            humanList.get(i).turn +=1;
+            if(humanList.get(i).alive == true){
+                humanList.get(i).turn +=1;
+            }
         }
     }
 
