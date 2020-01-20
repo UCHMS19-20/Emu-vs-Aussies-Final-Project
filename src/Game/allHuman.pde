@@ -1,6 +1,20 @@
 public class allHuman
 {
     public ArrayList<Human> humanList;
+    int [] pathRow1 = {3,2,1,0,0,0,0,0,0,0,1,2,3};
+    int [] pathCol1 = {6,6,6,6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow2 = {2,1,0,0,0,0,0,0,0,1,2,3};
+    int [] pathCol2 = {6,6,6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow3 = {4,5,6,6,6,6,6,6,6,5,4,3};
+    int [] pathCol3 = {6,6,6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow4 = {1,0,0,0,0,0,0,0,1,2,3};
+    int [] pathCol4 = {6,6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow5 = {5,6,6,6,6,6,6,6,5,4,3};
+    int [] pathCol5 = {6,6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow6 = {0,0,0,0,0,0,0,1,2,3};
+    int [] pathCol6 = {6,5,4,3,2,1,0,0,0,0};
+    int [] pathRow7 = {6,6,6,6,6,6,6,5,4,3};
+    int [] pathCol7 = {6,5,4,3,2,1,0,0,0,0};
 
     public allHuman(){
         humanList = new ArrayList<Human>(0);
@@ -22,7 +36,6 @@ public class allHuman
     public void fullTurn(){
         newHuman();
         move();
-        updateImage();
         turnIncrement();
     }
     
@@ -39,32 +52,32 @@ public class allHuman
             switch(human.typePath)
             {
                 case 1: 
-                    human.row = PitchForkPitchForkHuman.pathRow1[human.turn];
-                    human.col = PitchForkPitchForkHuman.pathCol1[human.turn];
+                    human.row = pathRow1[human.turn];
+                    human.col = pathCol1[human.turn];
                     break;
                 case 2:
-                    human.row = PitchForkHuman.pathRow2[human.turn];
-                    human.col = PitchForkHuman.pathCol2[human.turn];
+                    human.row = pathRow2[human.turn];
+                    human.col = pathCol2[human.turn];
                     break;
                 case 3:
-                    human.row = PitchForkHuman.pathRow3[human.turn];
-                    human.col = PitchForkHuman.pathCol3[human.turn];
+                    human.row = pathRow3[human.turn];
+                    human.col = pathCol3[human.turn];
                     break;
                 case 4:
-                    human.row = PitchForkHuman.pathRow4[human.turn];
-                    human.col = PitchForkHuman.pathCol4[human.turn];
+                    human.row = pathRow4[human.turn];
+                    human.col = pathCol4[human.turn];
                     break;
                 case 5:
-                    human.row = PitchForkHuman.pathRow5[human.turn];
-                    human.col = PitchForkHuman.pathCol5[human.turn];
+                    human.row = pathRow5[human.turn];
+                    human.col = pathCol5[human.turn];
                     break;
                 case 6:
-                    human.row = PitchForkHuman.pathRow6[human.turn];
-                    human.col = PitchForkHuman.pathCol6[human.turn];
+                    human.row = pathRow6[human.turn];
+                    human.col = pathCol6[human.turn];
                     break;
                 case 7:
-                    human.row = PitchForkHuman.pathRow7[human.turn];
-                    human.col = PitchForkHuman.pathCol7[human.turn];
+                    human.row = pathRow7[human.turn];
+                    human.col = pathCol7[human.turn];
                     break;
                 default:
                     break;   

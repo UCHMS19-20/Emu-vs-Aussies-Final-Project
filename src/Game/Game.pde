@@ -19,6 +19,8 @@ void draw()
     background(0,0,0);
     map.mapDisplay();
     emus.updateImage();
+    humans.updateImage();
+
 }
 
 void keyPressed()
