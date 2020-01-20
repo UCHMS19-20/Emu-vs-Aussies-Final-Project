@@ -11,13 +11,4 @@ abstract class Tile
   {
     image(tImage,xCord,yCord,tWidth,tHeight);
   }
-  
-  public int xCordGet()
-  {
-    return(xCord);
-  }
-  public int yCordGet()
-  {
-    return(yCord);
-  }
 }

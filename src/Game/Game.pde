@@ -1,5 +1,4 @@
 public Tilemap map;
-// public Emu emu;
 public allEmu emus;
 int i = 0;
 int j = 0;
@@ -10,14 +9,12 @@ void setup()
    
     map = new AusMap(8,8); 
     emus = new allEmu();
-    // emu = new EmuFistFighter(0,0);
 }
 
 void draw()
 {
     background(0,0,0);
     map.mapDisplay();
-    // emu.imagePrint();
     emus.update();
 }
 

@@ -8,26 +8,27 @@ public class allEmu
         emuList = new ArrayList<Emu>(0);
         selectedIndex = 0;
     }
+
     public void update()
     {
-        // System.out.println(emuList.size());
         for(int i = 0; i < emuList.size(); i++)
         {
             emuList.get(i).imagePrint();
         }
     }
+
     public void select(int x, int y)
     {   
         for(int i = 0; i < emuList.size(); i++){
 
-            if(( x >emuList.get(i).getX()) && (x< (emuList.get(i).getX() +emuList.get(i).getWidth()))
-            && (y >emuList.get(i).getY()) && (y< (emuList.get(i).getY() +emuList.get(i).getHeight())))
+            if((x >emuList.get(i).xEmu) && (x< (emuList.get(i).xEmu +emuList.get(i).getWidth()))
+            && (y >emuList.get(i).yEmu && (y< (emuList.get(i).yEmu +emuList.get(i).getHeight()))))
             {
-                // emuList.get(i).setSelected(true);
                 selectedIndex = i;
             }
         }
     }
+
     public void move(String theKey)
     { 
         Emu emu = emuList.get(selectedIndex);
@@ -66,6 +67,7 @@ public class allEmu
         emu.xEmu = emu.tile.xCord+15;
         emu.yEmu = emu.tile.yCord+15;
     }
+
     public boolean sameLoc(int row, int col)
     {
         for(int i = 0; i< emuList.size(); i++){
