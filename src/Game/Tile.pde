@@ -4,8 +4,8 @@ abstract class Tile
   int xCord;
   int yCord;
   PImage tImage;
-  int tWidth = 110;
-  int tHeight = 110;
+  int tWidth = 100;
+  int tHeight = 100;
  
   public void imagePrint()
   {

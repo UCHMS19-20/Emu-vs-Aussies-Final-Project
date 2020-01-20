@@ -2,12 +2,15 @@ abstract class Human
 {
     int attack;
     int hp;
-    int xEmu;
-    int yEmu;
+    int typePath;
+    int xHuman;
+    int yHuman;
     int row;
     int col;
     int width;
     int height;
+    int turn;
+    String name;
     Tile tile;
     Tilemap tileMap;
     PImage hImage;

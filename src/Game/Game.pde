@@ -1,16 +1,14 @@
 public Tilemap map;
 public allEmu emus;
-int i = 0;
-int j = 0;
 public Human human;
 
 void setup()
 {
-    size(1200,900);
+    size(900,900);
    
-    map = new AusMap(8,8); 
+    map = new AusMap(9,9); 
     emus = new allEmu();
-    human = new PitchForkHuman(7,7);
+    human = new PitchForkHuman(8,8);
 }
 
 void draw()

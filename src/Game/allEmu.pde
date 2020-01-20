@@ -36,27 +36,25 @@ public class allEmu
         int tempRow = emu.row;
         int tempCol = emu.col;
         
-        System.out.println(emu.row);
-        System.out.println(emu.col);
         switch(theKey)
         {
             case "w":
-                if(emu.row>0 && !(sameLoc(++tempRow , tempCol))){
+                if(emu.row>0 && !(sameEmuLoc(++tempRow , tempCol))){
                 emu.row--;
                 }
                 break;
             case "s":
-                if(emu.row<map.rowNum()-1 && !(sameLoc(++tempRow, tempCol))){
+                if(emu.row<map.rowNum()-1 && !(sameEmuLoc(++tempRow, tempCol))){
                 emu.row++;
                 }
                 break;
             case "a":
-                if(emu.col>0 && !(sameLoc(tempRow, --tempCol ))){
+                if(emu.col>0 && !(sameEmuLoc(tempRow, --tempCol ))){
                 emu.col--;
                 }
                 break;
             case "d":
-                if(emu.col<map.colNum()-1 && !(sameLoc(tempRow, ++tempCol ))){
+                if(emu.col<map.colNum()-1 && !(sameEmuLoc(tempRow, ++tempCol ))){
                 emu.col++;
                 }
                 break;
@@ -68,10 +66,10 @@ public class allEmu
         emu.yEmu = emu.tile.yCord+15;
     }
 
-    public boolean sameLoc(int row, int col)
+    public boolean sameEmuLoc(int row, int col)
     {
         for(int i = 0; i< emuList.size(); i++){
-            if((row == emuList.get(j).row) && (col == emuList.get(j).col) &&!(selectedIndex == i))
+            if((row == emuList.get(i).row) && (col == emuList.get(i).col) &&!(selectedIndex == i))
             {
                 return true;
             }
