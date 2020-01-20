@@ -9,6 +9,8 @@ class EmuFistFighter extends Emu
         this.height = 75;
         this.row = row;
         this.col = col;
+        this.moveNum = 0;
+        this.maxMove = 1;
         this.name = "emu";
         this.tile = map.terrainList[row][col];
         this.xEmu = this.tile.xCord + 13;

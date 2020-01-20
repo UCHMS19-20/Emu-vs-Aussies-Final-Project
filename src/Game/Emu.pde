@@ -8,11 +8,14 @@ abstract class Emu
     int col;
     int width;
     int height;
+    int moveNum;
+    int maxMove;
     Tile tile;
     Tilemap tileMap;
     PImage eImage;
     String name;
     boolean alive;
+
 
     public abstract void imagePrint();
 }

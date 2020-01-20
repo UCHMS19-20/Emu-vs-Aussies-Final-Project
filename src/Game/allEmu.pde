@@ -6,8 +6,6 @@ public class allEmu
     //0: no collision 1: emu collision 2: human collision
     int collisionState;
 
-
-
     public allEmu()
     {
         emuList = new ArrayList<Emu>(0);
@@ -40,35 +38,39 @@ public class allEmu
         
         int tempRow = emu.row;
         int tempCol = emu.col;
-        
-        switch(theKey)
+        if(emu.moveNum < emu.maxMove)
         {
-            case "w":
-                if(emu.row>0 && !(sameEmuLoc(--tempRow , tempCol))){
-                emu.row--;
-                }
-                break;
-            case "s":
-                if(emu.row<map.rowNum()-1 && !(sameEmuLoc(++tempRow, tempCol))){
-                emu.row++;
-                }
-                break;
-            case "a":
-                if(emu.col>0 && !(sameEmuLoc(tempRow, --tempCol ))){
-                emu.col--;
-                }
-                break;
-            case "d":
-                if(emu.col<map.colNum()-1 && !(sameEmuLoc(tempRow, ++tempCol ))){
-                emu.col++;
-                }
-                break;
-            default:
-                break;
-        }
+            switch(theKey)
+            {
+                case "w":
+                    if(emu.row>0 && !(sameEmuLoc(--tempRow , tempCol))){
+                    emu.row--;
+                    }
+                    break;
+                case "s":
+                    if(emu.row<map.rowNum()-1 && !(sameEmuLoc(++tempRow, tempCol))){
+                    emu.row++;
+                    }
+                    break;
+                case "a":
+                    if(emu.col>0 && !(sameEmuLoc(tempRow, --tempCol ))){
+                    emu.col--;
+                    }
+                    break;
+                case "d":
+                    if(emu.col<map.colNum()-1 && !(sameEmuLoc(tempRow, ++tempCol ))){
+                    emu.col++;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        
+        emu.moveNum ++;
         emu.tile = map.terrainList[emu.row][emu.col];
         emu.xEmu = emu.tile.xCord+15;
         emu.yEmu = emu.tile.yCord+15;
+        }
     }
 
     public boolean sameEmuLoc(int row, int col){
@@ -103,6 +105,11 @@ public class allEmu
         }
         if(emu.hp<= 0){
             emuList.get(i).alive = false;
+        }
+    }
+    public void moveReset(){
+        for(int i = 0; i< emuList.size(); i++){
+            emuList.get(i).moveNum = 0;
         }
     }
 }

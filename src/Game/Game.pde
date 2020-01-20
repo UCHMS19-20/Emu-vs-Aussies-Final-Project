@@ -52,8 +52,9 @@ void keyPressed()
         emus.move(letter);
     }
     else if(letter.equals("k"))
-    { 
+    {
         humans.fullTurn();
+        emus.moveReset();
     }
     else if(letter.equals("z"))
     {
