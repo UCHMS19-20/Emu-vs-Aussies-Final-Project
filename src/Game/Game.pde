@@ -2,6 +2,7 @@ public Tilemap map;
 public allEmu emus;
 int i = 0;
 int j = 0;
+public Human human;
 
 void setup()
 {
@@ -9,6 +10,7 @@ void setup()
    
     map = new AusMap(8,8); 
     emus = new allEmu();
+    human = new PitchForkHuman(7,7);
 }
 
 void draw()
@@ -16,6 +18,7 @@ void draw()
     background(0,0,0);
     map.mapDisplay();
     emus.update();
+    human.imagePrint();
 }
 
 void keyPressed()
@@ -27,7 +30,7 @@ void keyPressed()
     }
     else if(letter.equals("z"))
     {
-        emus.emuList.add(new EmuFistFighter(0,0));
+        emus.emuList.add(new EmuFistFighter(4,0));
     }
 }
 

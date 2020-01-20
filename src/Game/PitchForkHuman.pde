@@ -1,7 +1,7 @@
-class EmuFistFighter extends Emu
+class PitchForkHuman extends Human
 {
 
-    public EmuFistFighter( int row, int col)
+    public PitchForkHuman( int row, int col)
     {
         this.attack = 50;
         this.hp = 1000;
@@ -12,10 +12,10 @@ class EmuFistFighter extends Emu
         this.tile = map.terrainList[row][col];
         this.xEmu = this.tile.xCord + 15;
         this.yEmu = this.tile.yCord + 15;
-        this.eImage = loadImage("images/characters/emu.jpg");
+        this.hImage = loadImage("images/characters/man.jpg");
     }
     public void imagePrint()
     {
-        image(eImage,xEmu,yEmu,width,height);
+        image(hImage,xEmu,yEmu,width,height);
     }
 }
