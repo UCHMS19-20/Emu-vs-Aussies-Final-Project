@@ -60,7 +60,14 @@ void keyPressed()
         coin.endOfRound();
     }
     else if(letter.equals("z"))
-    {   if(coin.coinAmount-coin.emuCost>=0){
+    {  
+        boolean canGenerate = true;
+        for(int i = 0;i< emus.emuList.size(); i++){
+            if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
+                 canGenerate = false;
+            }
+        }
+        if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true ){
             emus.emuList.add(new EmuFistFighter(3,0));
             coin.emuPurchase();
         }   
