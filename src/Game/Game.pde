@@ -17,6 +17,8 @@ void setup()
     emus = new allEmu();
     humans = new allHuman();
     frameRate(30);
+
+
 }
 
 void draw()
@@ -32,7 +34,6 @@ void draw()
             emus.humanEmuCollision();
             coin.printAllVisuals();
             break;
-
         case 1:
             win();
             break;
@@ -44,6 +45,10 @@ void draw()
         default:
             break;
     }
+}
+
+void introduction(){
+
 }
 
 void keyPressed()

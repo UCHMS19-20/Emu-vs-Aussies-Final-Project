@@ -19,6 +19,7 @@ class Coin{
     }
 
     public void printAllVisuals(){
+        rectPrint();
         imagePrint();
         printText();
     }
@@ -32,6 +33,12 @@ class Coin{
         fill(122, 102, 153);
         text(coinAmount, 200, 780);
     }
+
+    public void rectPrint(){
+        fill(100,200,80);
+        rect(0,700,700,100);
+    }
+
     public void endOfRound(){
         coinAmount +=endRound;
     }
