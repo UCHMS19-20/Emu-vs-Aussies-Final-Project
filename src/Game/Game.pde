@@ -33,15 +33,15 @@ void setup()
     emus = new allEmu();
     humans = new allHuman();
     frameRate(30);
-    emuWar = loadImage("images/characters/emuWar.jpg");
-    soldierEmu = loadImage("images/characters/soldierEmu.jpg");
-    a = loadImage("images/characters/a.jpg");
-    w = loadImage("images/characters/w.jpg");
-    s = loadImage("images/characters/s.jpg");
-    d = loadImage("images/characters/d.jpg");
-    z = loadImage("images/characters/z.jpg");
-    x = loadImage("images/characters/x.jpg");
-    pointer = loadImage("images/characters/pointer.jpg");
+    emuWar = loadImage("images/background/emuWar.jpg");
+    soldierEmu = loadImage("images/background/soldierEmu.jpg");
+    a = loadImage("images/key/a.jpg");
+    w = loadImage("images/key/w.jpg");
+    s = loadImage("images/key/s.jpg");
+    d = loadImage("images/key/d.jpg");
+    z = loadImage("images/key/z.jpg");
+    x = loadImage("images/key/x.jpg");
+    pointer = loadImage("images/key/pointer.jpg");
 
 }
 
@@ -162,7 +162,7 @@ public void stateDeterminer(){
 }
 public void lose(){
     background(255,60,100);
-    textSize(100);
+    textSize(70);
     fill(0, 0, 0);
     text("You are a big L :(", 30, 350);
     winLoseCounter ++;
