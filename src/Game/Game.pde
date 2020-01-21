@@ -84,11 +84,16 @@ void draw()
             image(w,120,30,80,80);
 
             image(z,600,700,80,80);
-            image(k,500,700,80,80);
+            textSize(15);
+            text("spawn emu",600,790);
+            image(k,400,700,80,80);
+            text("farmer ai makes move",350,790);
 
             image(pointer,300,300,80,80);
-            
-            
+            text("select emu by click",280,400);
+
+            text("press p to go to game",0,600);
+
             break;
         default:
             break;
@@ -187,8 +192,6 @@ public void introduction(){
                 textSize(20);
                 fill(255,0,0);
                 text("For many years we, the emus, have been oppressed", 130, 350);
-                textSize(15);
-                text("Press l to skip",300,600);
                 break;
             case 2:
                 textSize(20);
@@ -221,8 +224,8 @@ public void introduction(){
                 state = 4;
                 break;
         }
-    introCounter++;
     }
+    introCounter++;
 }
 
 
