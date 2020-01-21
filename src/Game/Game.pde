@@ -10,7 +10,7 @@ public PImage a;
 public PImage w;
 public PImage s;
 public PImage d;
-public PImage k;
+public PImage x;
 public PImage z;
 public PImage pointer;
 
@@ -40,7 +40,7 @@ void setup()
     s = loadImage("images/characters/s.jpg");
     d = loadImage("images/characters/d.jpg");
     z = loadImage("images/characters/z.jpg");
-    k = loadImage("images/characters/k.jpg");
+    x = loadImage("images/characters/x.jpg");
     pointer = loadImage("images/characters/pointer.jpg");
 
 }
@@ -86,7 +86,7 @@ void draw()
             image(z,600,700,80,80);
             textSize(15);
             text("spawn emu",600,790);
-            image(k,400,700,80,80);
+            image(x,400,700,80,80);
             text("farmer ai makes move",350,790);
 
             image(pointer,300,300,80,80);
@@ -186,44 +186,42 @@ public void introduction(){
     background(125,125,125);
     tint(125, 80);
     image(emuWar,0,0,700,800);
-    if(state == 3){
-        switch(introCounter){
-            case 1:
-                textSize(20);
-                fill(255,0,0);
-                text("For many years we, the emus, have been oppressed", 130, 350);
-                break;
-            case 2:
-                textSize(20);
-                text("The farmers of australia have kept all the food from us", 60, 350);
-                text("and waged the Emu War on us",175,400);
-                textSize(15);
-                text("Press l to skip",300,600);
-                delay(5000);
-                break;
-            case 3:
-                textSize(20);
-                text("Many of our comrades have died",170,350);
-                textSize(15);
-                text("Press l to skip",300,600);
-                delay(8000);
-                break;
-            case 4:
-                textSize(20);
-                text("Now it is time to avenge the deaths of our comrades!!!!",70,350);
-                textSize(15);
-                text("Press l to skip",300,600);
-                delay(3000);
-                break;
-            case 5:
-                textSize(20);
-                text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",60,350);
-                textSize(15);
-                text("Press l to skip",300,600);
-                delay(4000);
-                state = 4;
-                break;
-        }
+    switch(introCounter){
+        case 1:
+            textSize(20);
+            fill(255,0,0);
+            text("For many years we, the emus, have been oppressed", 130, 350);
+            break;
+        case 2:
+            textSize(20);
+            text("The farmers of australia have kept all the food from us", 60, 350);
+            text("and waged the Emu War on us",175,400);
+            textSize(15);
+            text("Press l to skip",300,600);
+            delay(5000);
+            break;
+        case 3:
+            textSize(20);
+            text("Many of our comrades have died",170,350);
+            textSize(15);
+            text("Press l to skip",300,600);
+            delay(8000);
+            break;
+        case 4:
+            textSize(20);
+            text("Now it is time to avenge the deaths of our comrades!!!!",70,350);
+            textSize(15);
+            text("Press l to skip",300,600);
+            delay(3000);
+            break;
+        case 5:
+            textSize(20);
+            text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",60,350);
+            textSize(15);
+            text("Press l to skip",300,600);
+            delay(4000);
+            state = 4;
+            break;
     }
     introCounter++;
 }

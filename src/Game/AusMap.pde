@@ -7,7 +7,7 @@ class AusMap extends Tilemap
   int []numT = {1,1,1,1,1,1,1,
                 1,1,1,1,1,1,1,
                 1,1,1,1,1,1,1,
-                6,1,1,1,1,1,6,
+                5,1,1,1,1,1,6,
                 1,1,1,1,1,1,1,
                 1,1,1,1,1,1,1,
                 1,1,1,1,1,1,1,};
@@ -47,7 +47,7 @@ class AusMap extends Tilemap
           terrainList[i][j] = new DesertTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 5){
-          terrainList[i][j] = new OceanTile(x,y);
+          terrainList[i][j] = new FortTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 6){
           terrainList[i][j] = new FarmTile(x,y);
