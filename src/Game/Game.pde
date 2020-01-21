@@ -4,10 +4,13 @@ public allHuman humans;
 public Coin coin;
 
 //0: Game| 1: Win| 2: Lose| 3: Introduction
-int state = 0;
+int state = 3;
 
 //Time Counter
 int winLoseCounter = 0;
+
+//IntroCounter
+int introCounter = 0;
 
 void setup()
 {
@@ -41,15 +44,19 @@ void draw()
             break;
 
         case 3:
+            introduction();
+            break;
 
+        case 4:
+            delay(4000);
+            state = 0;
+            break;
         default:
             break;
     }
 }
 
-void introduction(){
 
-}
 
 void keyPressed()
 {
@@ -105,16 +112,59 @@ public void stateDeterminer(){
 }
 public void lose(){
     background(255,60,100);
+    textSize(100);
+    fill(0, 0, 0);
+    text("You Lost :(", 30, 350);
     winLoseCounter ++;
-    if(winLoseCounter >= 300000){
+    if(winLoseCounter >= 150){
         exit();
     }
+    
 }
 public void win(){
     background(60,250,150);
+    textSize(130);
+    fill(0, 0, 0);
+    text("You Won!!!", 30, 350);
     winLoseCounter ++;
-    if(winLoseCounter >= 300000){
+    if(winLoseCounter >= 150){
         exit()
         ;
     }
 }
+
+public void introduction(){
+    background(60,100,250);
+    switch(introCounter){
+        case 1:
+            textSize(30);
+            text("For so long us, the emus were oppresed", 30, 350);
+            
+            break;
+        case 2:
+            textSize(20);
+            text("The farmers of australia have kept all the food from us", 30, 350);
+            text("and have even started the emu war", 30, 450);
+            delay(4000);
+            break;
+        case 3:
+            textSize(30);
+            text("Many of our comrades have died",30,350);
+            delay(6000);
+            break;
+        case 4:
+            textSize(20);
+            text("Now it is time to avenge the deaths of our comrades!!!!",30,350);
+            delay(3000);
+            break;
+        case 5:
+            textSize(20);
+            text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",30,350);
+            delay(4000);
+            state = 4;
+            break;
+    }
+    introCounter++;
+}
+
+
