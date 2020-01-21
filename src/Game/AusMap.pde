@@ -50,7 +50,7 @@ class AusMap extends Tilemap
           terrainList[i][j] = new OceanTile(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 6){
-          terrainList[i][j] = new CastleTile(x,y);
+          terrainList[i][j] = new FarmTile(x,y);
         }
         x+=100;
       }

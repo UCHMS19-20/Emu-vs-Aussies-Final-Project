@@ -3,6 +3,19 @@ public allEmu emus;
 public allHuman humans;
 public Coin coin;
 
+
+public PImage emuWar;
+public PImage soldierEmu;
+public PImage a;
+public PImage w;
+public PImage s;
+public PImage d;
+public PImage k;
+public PImage z;
+public PImage pointer;
+
+
+
 //0: Game| 1: Win| 2: Lose| 3: Introduction
 int state = 3;
 
@@ -20,6 +33,16 @@ void setup()
     emus = new allEmu();
     humans = new allHuman();
     frameRate(30);
+    emuWar = loadImage("images/characters/emuWar.jpg");
+    soldierEmu = loadImage("images/characters/soldierEmu.jpg");
+    a = loadImage("images/characters/a.jpg");
+    w = loadImage("images/characters/w.jpg");
+    s = loadImage("images/characters/s.jpg");
+    d = loadImage("images/characters/d.jpg");
+    z = loadImage("images/characters/z.jpg");
+    k = loadImage("images/characters/k.jpg");
+    pointer = loadImage("images/characters/pointer.jpg");
+
 }
 
 void draw()
@@ -28,6 +51,7 @@ void draw()
     switch(state)
     {
         case 0:
+            noTint();
             background(250,250,250);
             map.mapDisplay();
             emus.updateImage();
@@ -44,12 +68,27 @@ void draw()
             break;
 
         case 3:
+            
             introduction();
             break;
 
         case 4:
             delay(4000);
-            state = 0;
+            background(250,250,250);
+            tint(125,200);
+            image(soldierEmu,0,0,700,800);
+            noTint();
+            image(a,30,120,80,80);
+            image(s,120,120,80,80);
+            image(d,210,120,80,80);
+            image(w,120,30,80,80);
+
+            image(z,600,700,80,80);
+            image(k,500,700,80,80);
+
+            image(pointer,300,300,80,80);
+            
+            
             break;
         default:
             break;
@@ -65,7 +104,7 @@ void keyPressed()
     {
         emus.move(letter);
     }
-    else if(letter.equals("k"))
+    else if(letter.equals("x"))
     {
         humans.movedFalse();
         humans.fullTurn();
@@ -84,6 +123,12 @@ void keyPressed()
             emus.emuList.add(new EmuFistFighter(3,0));
             coin.emuPurchase();
         }   
+    }
+    else if (letter.equals("l")){
+        state = 4;
+    }
+    else if(letter.equals("p")){
+        state = 0;
     }
 }
 
@@ -114,7 +159,7 @@ public void lose(){
     background(255,60,100);
     textSize(100);
     fill(0, 0, 0);
-    text("You Lost :(", 30, 350);
+    text("You are a big L :(", 30, 350);
     winLoseCounter ++;
     if(winLoseCounter >= 150){
         exit();
@@ -128,43 +173,56 @@ public void win(){
     text("You Won!!!", 30, 350);
     winLoseCounter ++;
     if(winLoseCounter >= 150){
-        exit()
-        ;
+        exit();
     }
 }
 
 public void introduction(){
-    background(60,100,250);
-    switch(introCounter){
-        case 1:
-            textSize(30);
-            text("For so long us, the emus were oppresed", 30, 350);
-            
-            break;
-        case 2:
-            textSize(20);
-            text("The farmers of australia have kept all the food from us", 30, 350);
-            text("and have even started the emu war", 30, 450);
-            delay(4000);
-            break;
-        case 3:
-            textSize(30);
-            text("Many of our comrades have died",30,350);
-            delay(6000);
-            break;
-        case 4:
-            textSize(20);
-            text("Now it is time to avenge the deaths of our comrades!!!!",30,350);
-            delay(3000);
-            break;
-        case 5:
-            textSize(20);
-            text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",30,350);
-            delay(4000);
-            state = 4;
-            break;
-    }
+    background(125,125,125);
+    tint(125, 80);
+    image(emuWar,0,0,700,800);
+    if(state == 3){
+        switch(introCounter){
+            case 1:
+                textSize(20);
+                fill(255,0,0);
+                text("For many years we, the emus, have been oppressed", 130, 350);
+                textSize(15);
+                text("Press l to skip",300,600);
+                break;
+            case 2:
+                textSize(20);
+                text("The farmers of australia have kept all the food from us", 60, 350);
+                text("and waged the Emu War on us",175,400);
+                textSize(15);
+                text("Press l to skip",300,600);
+                delay(5000);
+                break;
+            case 3:
+                textSize(20);
+                text("Many of our comrades have died",170,350);
+                textSize(15);
+                text("Press l to skip",300,600);
+                delay(8000);
+                break;
+            case 4:
+                textSize(20);
+                text("Now it is time to avenge the deaths of our comrades!!!!",70,350);
+                textSize(15);
+                text("Press l to skip",300,600);
+                delay(3000);
+                break;
+            case 5:
+                textSize(20);
+                text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",60,350);
+                textSize(15);
+                text("Press l to skip",300,600);
+                delay(4000);
+                state = 4;
+                break;
+        }
     introCounter++;
+    }
 }
 
 
