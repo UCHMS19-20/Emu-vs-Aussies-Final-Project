@@ -48,26 +48,31 @@ public class allEmu
                     emu.moveNum ++;
                     }
                     break;
+                    
                 case "s":
                     if(emu.row<map.rowNum()-1 && !(sameEmuLoc(++tempRow, tempCol))){
                     emu.row++;
                     emu.moveNum ++;
                     }
                     break;
+                    
                 case "a":
                     if(emu.col>0 && !(sameEmuLoc(tempRow, --tempCol ))){
                     emu.col--;
                     emu.moveNum ++;
                     }
                     break;
+                    
                 case "d":
                     if(emu.col<map.colNum()-1 && !(sameEmuLoc(tempRow, ++tempCol ))){
                     emu.col++;
                     emu.moveNum ++;
                     }
                     break;
+                    
                 default:
-                    break;
+                break;
+                    
             }
         
         emu.tile = map.terrainList[emu.row][emu.col];

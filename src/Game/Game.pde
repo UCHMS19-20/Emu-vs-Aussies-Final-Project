@@ -59,10 +59,10 @@ void draw()
             emus.humanEmuCollision();
             coin.printAllVisuals();
             break;
+            
         case 1:
             win();
             break;
-        
         case 2:
             lose();
             break;
@@ -93,10 +93,11 @@ void draw()
             text("select emu by click",280,400);
 
             text("press p to go to game",0,600);
-
             break;
+            
         default:
-            break;
+        break;
+            
     }
 }
 
@@ -194,6 +195,7 @@ public void introduction(){
             fill(255,0,0);
             text("For many years we, the emus, have been oppressed", 130, 350);
             break;
+            
         case 2:
             textSize(20);
             text("The farmers of australia have kept all the food from us", 60, 350);
@@ -202,6 +204,7 @@ public void introduction(){
             text("Press l to skip",300,600);
             delay(5000);
             break;
+            
         case 3:
             textSize(20);
             text("Many of our comrades have died",170,350);
@@ -209,6 +212,7 @@ public void introduction(){
             text("Press l to skip",300,600);
             delay(8000);
             break;
+            
         case 4:
             textSize(20);
             text("Now it is time to avenge the deaths of our comrades!!!!",70,350);
@@ -216,6 +220,7 @@ public void introduction(){
             text("Press l to skip",300,600);
             delay(3000);
             break;
+            
         case 5:
             textSize(20);
             text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",60,350);
@@ -224,6 +229,9 @@ public void introduction(){
             delay(4000);
             state = 4;
             break;
+        default:
+            break;
+            
     }
     introCounter++;
 }

@@ -45,36 +45,8 @@ public class allHuman
         turnIncrement();
     }
     
-    public void newHuman()
-    {
+    public void newHuman(){
         humanList.add(new PitchForkHuman());
-        Human human;
-        human = humanList.get(humanList.size()-1);
-        human.number = humanList.size();
-        switch(human.typePath)
-        {   
-            case 1:
-                human.pathLength = pathRow0.length;
-                break;
-            case 2:
-                human.pathLength = pathRow1.length;
-                break;
-            case 3:
-                human.pathLength = pathRow2.length;
-                break;
-            case 4:
-                human.pathLength = pathRow3.length;
-                break;
-            case 5:
-                human.pathLength = pathRow4.length;
-                break;
-            case 6:
-                human.pathLength = pathRow5.length;
-                break;
-            case 7:
-                human.pathLength = pathRow6.length;
-                break;
-        }
     }
         
 
@@ -85,36 +57,40 @@ public class allHuman
 
             switch(human.typePath)
             {
-                case 1: 
+                case 0: 
                     if(!(humanCollision(pathRow0[human.turn],pathCol0[human.turn],i))){
                         human.row = pathRow0[human.turn];
                         human.col = pathCol0[human.turn];
                         human.moved = true;
                     }
                     break;
-                case 2:
+                    
+                case 1:
                     if(!(humanCollision(pathRow1[human.turn],pathCol1[human.turn],i))){
                         human.row = pathRow1[human.turn];
                         human.col = pathCol1[human.turn];
                         human.moved = true;
                     }
                     break;
+                    
                 
-                case 3:
+                case 2:
                     if(!(humanCollision(pathRow2[human.turn],pathCol2[human.turn],i))){
                         human.row = pathRow2[human.turn];
                         human.col = pathCol2[human.turn];
                         human.moved = true;
                     }
                     break;
-                case 4:
+                    
+                case 3:
                     if(!(humanCollision(pathRow3[human.turn],pathCol3[human.turn],i))){
                         human.row = pathRow3[human.turn];
                         human.col = pathCol3[human.turn];
                         human.moved = true;
                     }
                     break;
-                case 5:
+                    
+                case 4:
                     if(!(humanCollision(pathRow4[human.turn],pathCol5[human.turn],i))){
                         human.row = pathRow4[human.turn];
                         human.col = pathCol4[human.turn];
@@ -122,22 +98,26 @@ public class allHuman
                         
                     }   
                     break;
-                case 6:
+                    
+                case 5:
                     if(!(humanCollision(pathRow5[human.turn],pathCol5[human.turn],i))){
                         human.row = pathRow5[human.turn];
                         human.col = pathCol5[human.turn];
                         human.moved = true;
                     }
                     break;
-                case 7:
+                    
+                case 6:
                     if(!(humanCollision(pathRow6[human.turn],pathCol6[human.turn],i))){
                         human.row = pathRow6[human.turn];
                         human.col = pathCol6[human.turn];
                         human.moved = true;
                     }
                     break;
+                    
                 default:
-                    break;   
+                break;
+                       
             }
             human.tile = map.terrainList[human.row][human.col];
             human.xHuman = human.tile.xCord+15;
