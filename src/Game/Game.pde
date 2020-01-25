@@ -118,18 +118,20 @@ void keyPressed()
     }
     else if(letter.equals("z"))
     {  
+        System.out.println("z");
         boolean canGenerate = true;
         for(int i = 0;i< emus.emuList.size(); i++){
             if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
                  canGenerate = false;
             }
         }
-        if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true ){
+        if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
             emus.emuList.add(new EmuFistFighter(3,0));
             coin.emuPurchase();
         }   
     }
     else if (letter.equals("l")){
+        System.out.println("key pressed");
         state = 4;
     }
     else if(letter.equals("p")){

@@ -12,12 +12,14 @@ abstract class Human
     int width;
     int height;
     int turn;
+    int number;
     String name;
     Tile tile;
     Tilemap tileMap;
     PImage hImage;
     boolean alive;
     boolean moved;
+
 
     public abstract void imagePrint();
 }
