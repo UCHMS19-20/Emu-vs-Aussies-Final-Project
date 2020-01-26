@@ -162,9 +162,12 @@ void keyPressed()
             coin.nukeEmuPurchase();
         }     
     }
-    else if (letter.equals("h")){
+    else if (letter.equals("g")){
         System.out.println("key pressed");
         introCounter ++;
+    }
+    else if(letter.equals("h")){
+        state = 4;
     }
     else if(letter.equals("j")){
         state = 5;
@@ -248,7 +251,8 @@ public void keys(){
     image(n,360,510,80,80);
     text("lets ai make move",400,610);
 
-    text("press j to go to game",400,780);
+    text("press j to go to rules",200,780);
+    text("press k to go to game",600,780);
 }
 public void infoRight(){
     fill(188, 238, 153);
@@ -297,7 +301,7 @@ public void introduction(){
             text("the emus,", 400, 350);
             text("have been oppressed.", 400, 400);
             textSize(25);
-            text("Press h to Continue",400 ,600);
+            text("Press g to Continue",400 ,600);
             break;
             
         case 2:
@@ -306,14 +310,14 @@ public void introduction(){
             text(" kept all the food from us,", 400, 350);
             text(" and waged the Emu War on us.",400,400);
             textSize(25);
-            text("Press h to Continue",400,600);
+            text("Press g to Continue",400,600);
             break;
             
         case 3:
             textSize(40);
             text("Many of our comrades have died.",400,350);
             textSize(25);
-            text("Press h to Continue",400,600);
+            text("Press g to Continue",400,600);
             break;
             
         case 4:
@@ -321,7 +325,7 @@ public void introduction(){
             text("Now it is time to avenge the ",400,350);
             text(" deaths of our comrades!!!!",400,400);
             textSize(25);
-            text("Press h to Continue",400,600);
+            text("Press g to Continue",400,600);
             break;
             
         case 5:
@@ -332,7 +336,11 @@ public void introduction(){
             text("Press h to Continue",400,600);
             break;
         default:
-            state = 4;
+            textSize(40);
+            text("We will be waging emu war 2.0.",400,350);
+            text("Only now, we will ATTACK!!!!",400,400);
+            textSize(25);
+            text("Press h to Continue",400,600);
             break;
     }
     
@@ -353,7 +361,8 @@ public void rules(){
     text("You let the ai move at the end of your turn.",400,310);
     text("NOTE: If you attack a human you will",400,370);
     text("take their attack damage.",400,400);
-    text("Press k to move onto game.",400,600);
+    text("Press k to move onto game.",200,600);
+    text("Press j to move back to keys.",600,600);
 
 }
 

@@ -14,10 +14,10 @@ class Coin{
         this.gunEmuCost = 100;
         this.nukeEmuCost = 400;
         this.coinAmount = 100;
-        this.width = 100;
-        this.height = 100;
-        this.xCoin = 350;
-        this.yCoin = 700;
+        this.width = 95;
+        this.height = 95;
+        this.xCoin = 380;
+        this.yCoin = 702;
         this.endRound = 80;
         this.cImage = loadImage("images/characters/coin.jpg");
     }
@@ -36,11 +36,15 @@ class Coin{
         textAlign(CENTER,CENTER);
         textSize(60);
         fill(122, 102, 153);
-        text(coinAmount, 260, 750);
+        text(coinAmount, 310, 750);
+        textSize(15);
+        fill(100,30,0);
+        text("Press k to go back to rules",130,750);
+        text("Press j to go back to keys",590,750);
     }
 
     public void rectPrint(){
-        fill(100,200,80);
+        fill(150,250,130);
         rect(0,700,700,100);
     }
 

@@ -52,10 +52,10 @@ public class allHuman
     }
     public void newHuman(){
         int num = randomNum();
-        if(num< 4){
+        if(num< 3){
             humanList.add(new PitchForkHuman());
         }
-        else if(num ==4){
+        else if(num ==4 || num == 3){
             humanList.add(new GunHuman());
         }
     }
