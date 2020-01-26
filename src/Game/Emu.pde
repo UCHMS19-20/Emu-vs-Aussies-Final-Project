@@ -1,5 +1,9 @@
 abstract class Emu
 {
+    /**
+    * Defines variables that all classes 
+    * which extend this will use.
+    */
     int attack;
     int hp;
     int currentHp;
@@ -18,6 +22,9 @@ abstract class Emu
     boolean alive;
     int healthBarLength;
 
-
+    /**
+    * image print function which will 
+    * be defined in classes which extend this
+    */
     public abstract void imagePrint();
 }

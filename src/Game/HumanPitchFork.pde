@@ -1,13 +1,12 @@
-class HumanPitchFork extends Human
-{
+class HumanPitchFork extends Human{
     /**
     * Class creates a pitch fork human which is a type of Human.
     */
     public HumanPitchFork(){
-    /**
-    * Constructor for a humanPitchFork.
-    * Fighting, location and path variables are set.
-    */
+        /**
+        * Constructor for a humanPitchFork.
+        * Fighting, location and path variables are set.
+        */
         this.typePath = pathSet();
         this.pathLength = setPathLength();
         this.attack = 50;
@@ -25,6 +24,7 @@ class HumanPitchFork extends Human
         this.alive = true; //checks if human is alive
         this.moved = true; // checks if human moved
     }
+
     public int pathSet(){
         /**
         * Returns a random number representing a path 
@@ -69,6 +69,7 @@ class HumanPitchFork extends Human
             text(currentHp, xHuman+ (width/2), yHuman-2);
         }
     }
+
     public int setPathLength(){   
         /**
         * Sets and returns path length based on path previously choosen.
@@ -99,6 +100,7 @@ class HumanPitchFork extends Human
                 return 0;
         }
     }
+    
     public int setCol(){
         /**
         * Sets and returns the spawn column based off of the path choosen.
@@ -128,13 +130,12 @@ class HumanPitchFork extends Human
                 return 0;     
         }
     }
-    public int setRow()
-    {
+
+    public int setRow(){
         /**
         * Sets and returns the spawn row based off of the path choosen.
         */
-        switch(typePath)
-        {   
+        switch(typePath){   
             case 0:
                 return humans.pathRow0[0];
                 
@@ -155,6 +156,7 @@ class HumanPitchFork extends Human
                 
             case 6:
                 return humans.pathRow6[0];
+
             default:
                 return 0;   
         }

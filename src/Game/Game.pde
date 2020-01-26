@@ -1,6 +1,6 @@
 public Tilemap map;
-public allEmu emus;
-public allHuman humans;
+public EmuAll emus;
+public HumanAll humans;
 public Coin coin;
 
 PImage fistEmuPic;
@@ -9,10 +9,8 @@ PImage nukeEmuPic;
 PImage humanGunPic;
 PImage humanPitchForkPic;
 
-
 public PImage emuWar;
 public PImage soldierEmu;
-
 public PImage lose;
 public PImage win;
 
@@ -35,13 +33,12 @@ int winLoseCounter = 0;
 //IntroCounter
 int introCounter = 1;
 
-void setup()
-{
+void setup(){
     size(800,800);
     coin = new Coin();
-    map = new AusMap(7,7); 
-    emus = new allEmu();
-    humans = new allHuman();
+    map = new TileAusMap(7,7); 
+    emus = new EmuAll();
+    humans = new HumanAll();
     frameRate(30);
     emuWar = loadImage("images/background/emuWar.jpg");
     soldierEmu = loadImage("images/background/soldierEmu.jpg");
@@ -64,11 +61,11 @@ void setup()
     lose = loadImage("images/background/lose.jpg");
 }
 
-void draw()
-{
+void draw(){
+
     stateDeterminer();
-    switch(state)
-    {
+
+    switch(state){
         case 0:
             noTint();
             background(250,250,250);
@@ -83,6 +80,7 @@ void draw()
         case 1:
             win();
             break;
+
         case 2:
             lose();
             break;
@@ -94,10 +92,12 @@ void draw()
         case 4:
             keys();
             break;
+
         case 5:
             rules();
+
         default:
-        break;
+            break;
             
     }
 }
@@ -107,10 +107,10 @@ void draw()
 void keyPressed()
 {
     String letter = Character.toString(key);
-    if (letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w"))
-    {
+    if (letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w")){
         emus.move(letter);
     }
+
     else if(letter.equals("n"))
     {
         if(state == 0){
@@ -129,6 +129,7 @@ void keyPressed()
                     canGenerate = false;
                 }
             }
+
             if(coin.coinAmount-coin.fistEmuCost>=0 && canGenerate == true){
                 emus.emuList.add(new EmuFistFighter(3,0));
                 coin.fistEmuPurchase();
@@ -161,15 +162,19 @@ void keyPressed()
             coin.nukeEmuPurchase();
         }     
     }
+
     else if (letter.equals("g")){
         introCounter ++;
     }
+
     else if(letter.equals("h")){
         state = 4;
     }
+
     else if(letter.equals("j")){
         state = 5;
     }
+
     else if(letter.equals("k")){
         state = 0;
     }
@@ -196,6 +201,7 @@ public void stateDeterminer(){
         }
     }
 }
+
 public void lose(){
     background(255,60,100);
     textSize(70);
@@ -208,8 +214,8 @@ public void lose(){
     if(winLoseCounter >= 150){
         exit();
     }
-    
 }
+
 public void win(){
     background(60,250,150);
     textSize(130);
@@ -220,6 +226,7 @@ public void win(){
         exit();
     }
 }
+
 public void keys(){
     background(125,125,125);
     tint(125,40);
@@ -250,6 +257,7 @@ public void keys(){
     text("press j to go to rules",200,780);
     text("press k to go to game",600,780);
 }
+
 public void infoRight(){
     fill(188, 238, 153);
     rect(700,0,100,800);
@@ -284,6 +292,7 @@ public void infoRight(){
     text("Press 2| $100", 750, 195);
     text("Press 3| $400", 750, 355);
 }
+
 public void introduction(){
     background(125,125,125);
     tint(125, 40);
@@ -341,6 +350,7 @@ public void introduction(){
     }
     
 }
+
 public void rules(){
     background(130,130,230);
     textSize(40);
@@ -358,8 +368,7 @@ public void rules(){
     text("NOTE: If you attack a human you will",400,370);
     text("take their attack damage.",400,400);
     text("Press k to move onto game.",200,600);
-    text("Press j to move back to keys.",600,600);
-
+    text("Press h to move back to keys.",600,600);
 }
 
 

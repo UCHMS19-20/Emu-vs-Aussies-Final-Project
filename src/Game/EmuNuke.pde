@@ -1,8 +1,6 @@
 class EmuNuke extends Emu
 {
-
-    public EmuNuke( int row, int col)
-    {
+    public EmuNuke( int row, int col){
         this.attack = 1000;
         this.hp = 1000;
         this.currentHp = hp;
@@ -19,8 +17,8 @@ class EmuNuke extends Emu
         this.eImage = loadImage("images/characters/nukeEmu.jpg");
         this.alive = true;
     }
-    public void imagePrint()
-    {   
+
+    public void imagePrint(){   
         if(alive == true){  
             image(eImage,xEmu,yEmu,width,height);
             fill(255,0,0);

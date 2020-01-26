@@ -9,6 +9,7 @@ class Coin{
     int yCoin;
     int endRound;
     PImage cImage;
+
     public Coin(){
         this.fistEmuCost = 60;
         this.gunEmuCost = 100;
@@ -39,8 +40,8 @@ class Coin{
         text(coinAmount, 310, 750);
         textSize(15);
         fill(100,30,0);
-        text("Press k to go back to rules",130,750);
-        text("Press j to go back to keys",590,750);
+        text("Press j to go back to rules",130,750);
+        text("Press h to go back to keys",590,750);
     }
 
     public void rectPrint(){
@@ -51,14 +52,16 @@ class Coin{
     public void endOfRound(){
         coinAmount +=endRound;
     }
+
     public void fistEmuPurchase(){
         coinAmount-=fistEmuCost;
     }
+
     public void gunEmuPurchase(){
         coinAmount-=gunEmuCost;
     }
+
     public void nukeEmuPurchase(){
         coinAmount-=nukeEmuCost;
     }
-
 }

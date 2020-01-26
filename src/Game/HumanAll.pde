@@ -1,4 +1,4 @@
-public class allHuman
+public class HumanAll
 {
     public ArrayList<Human> humanList;
     int [] pathRow3 = {3,3,3,3,3,3,3};
@@ -16,7 +16,7 @@ public class allHuman
     int [] pathRow6 = {6,6,6,6,6,6,6,5,4,3};
     int [] pathCol6 = {6,5,4,3,2,1,0,0,0,0};
 
-    public allHuman(){
+    public HumanAll(){
         humanList = new ArrayList<Human>(0);
     }
 
@@ -40,12 +40,13 @@ public class allHuman
         move();
         turnIncrement();
     }
-    public int randomNum()
-    {
+
+    public int randomNum(){
         float num = random(0,5);
         int intNum = (int)num;
         return intNum;
     }
+
     public void newHuman(){
         int num = randomNum();
         if(num< 3){
@@ -56,14 +57,11 @@ public class allHuman
         }
     }
         
-
-    public void move()
-    {   Human human;
-        for(int i = 0; i < humanList.size(); i++)
-        {   human = humanList.get(i);
-
-            switch(human.typePath)
-            {
+    public void move(){   
+        Human human;
+        for(int i = 0; i < humanList.size(); i++){   
+            human = humanList.get(i);
+            switch(human.typePath){
                 case 0: 
                     if(!(humanCollision(pathRow0[human.turn],pathCol0[human.turn],i))){
                         human.row = pathRow0[human.turn];
@@ -80,7 +78,6 @@ public class allHuman
                     }
                     break;
                     
-                
                 case 2:
                     if(!(humanCollision(pathRow2[human.turn],pathCol2[human.turn],i))){
                         human.row = pathRow2[human.turn];
@@ -102,7 +99,6 @@ public class allHuman
                         human.row = pathRow4[human.turn];
                         human.col = pathCol4[human.turn];
                         human.moved = true;
-                        
                     }   
                     break;
                     
@@ -123,22 +119,24 @@ public class allHuman
                     break;
                     
                 default:
-                break;
-                       
+                    break;          
             }
+
             human.tile = map.terrainList[human.row][human.col];
             human.xHuman = human.tile.xCord+15;
             human.yHuman = human.tile.yCord+15;
         }
     }
+
     public boolean humanCollision(int row,int col, int index){
         for(int i = 0;i< humanList.size();i++){
-             if(row == humanList.get(i).row && col == humanList.get(i).col && humanList.get(i).alive == true){
-                 return true;
-             }
+            if(row == humanList.get(i).row && col == humanList.get(i).col && humanList.get(i).alive == true){
+                return true;
+            }
         }
         return false;
     }
+
     public void movedFalse(){
         for(int i = 0; i< humanList.size();i++){
             humanList.get(i).moved = false;

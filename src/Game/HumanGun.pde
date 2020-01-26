@@ -1,10 +1,8 @@
-class HumanGun extends Human
-{
+class HumanGun extends Human{
     /**
     * Class creates a gun human which is a type of Human.
     */
-    public HumanGun()
-    {
+    public HumanGun(){
         /**
         * Constructor for a HumanGun which is a type of human. 
         * Fighting, location and path variables are set.
@@ -26,8 +24,8 @@ class HumanGun extends Human
         this.alive = true; //checks if human is alive
         this.moved = true; // checks if human moved
     }
-    public int pathSet()
-    {
+
+    public int pathSet(){
         /**
         * Returns a random number representing a path 
         * based on the output from random function.
@@ -71,13 +69,11 @@ class HumanGun extends Human
             text(currentHp, xHuman+ (width/2), yHuman-2);
         }
     }
-    public int setPathLength()
-    {
+    public int setPathLength(){
         /**
         * Sets and returns path length based on path previously choosen.
         */
-        switch(typePath)
-        {   
+        switch(typePath){   
             case 0:
                 return humans.pathRow0.length;
                 
@@ -103,17 +99,14 @@ class HumanGun extends Human
                 return 0;
         }
     }
-    public int setCol()
-    {
+    public int setCol(){
         /**
         * Sets and returns the spawn column based off of the path choosen.
         */
-        switch(typePath)
-        {   
+        switch(typePath){   
             case 0:
                 return humans.pathCol0[0];
-                
-                
+                    
             case 1:
                 return humans.pathCol1[0];
                 
@@ -131,19 +124,16 @@ class HumanGun extends Human
                 
             case 6:
                 return humans.pathCol6[0];
-            default:
-                return 0;
 
-                
+            default:
+                return 0;       
         }
     }
-    public int setRow()
-    {
+    public int setRow(){
         /**
         * Sets and returns the spawn row based off of the path choosen.
         */
-        switch(typePath)
-        {   
+        switch(typePath){   
             case 0:
                 return humans.pathRow0[0];
                 
@@ -165,8 +155,7 @@ class HumanGun extends Human
             case 6:
                 return humans.pathRow6[0];
             default:
-                return 0;
-                
+                return 0;           
         }
     }
 }

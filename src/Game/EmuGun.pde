@@ -17,8 +17,8 @@ class EmuGun extends Emu{
         this.eImage = loadImage("images/characters/gunEmu.jpg");
         this.alive = true;
     }
-    public void imagePrint()
-    {   
+    
+    public void imagePrint(){   
         if(alive == true){  
             image(eImage,xEmu,yEmu,width,height);
             fill(255,0,0);

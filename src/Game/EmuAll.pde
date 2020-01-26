@@ -1,47 +1,38 @@
-public class allEmu
+public class EmuAll
 {
     public ArrayList<Emu> emuList;
     int selectedIndex;
 
-    //0: no collision 1: emu collision 2: human collision
-    int collisionState;
-
-    public allEmu()
-    {
+    public EmuAll(){
         emuList = new ArrayList<Emu>(0);
         selectedIndex = 0;
     }
 
-    public void updateImage()
-    {
-        for(int i = 0; i < emuList.size(); i++)
-        {
+    public void updateImage(){
+        for(int i = 0; i < emuList.size(); i++){
             emuList.get(i).imagePrint();
         }
     }
 
-    public void select(int x, int y)
-    {   
+    public void select(int x, int y){   
         for(int i = 0; i < emuList.size(); i++){
-
             if((x >emuList.get(i).xEmu) && (x< (emuList.get(i).xEmu +emuList.get(i).width)
-            && (y >emuList.get(i).yEmu) && (y< (emuList.get(i).yEmu +emuList.get(i).height)) && emuList.get(i).alive == true))
-            {
+            && (y >emuList.get(i).yEmu) && (y< (emuList.get(i).yEmu +emuList.get(i).height)) 
+            && emuList.get(i).alive == true)){
                 selectedIndex = i;
             }
         }
     }
 
-    public void move(String theKey)
-    { 
+    public void move(String theKey){ 
+
         Emu emu = emuList.get(selectedIndex);
-        
         int tempRow = emu.row;
         int tempCol = emu.col;
+
         if(emu.moveNum < emu.maxMove)
         {
-            switch(theKey)
-            {
+            switch(theKey){
                 case "w":
                     if(emu.row>0 && !(sameEmuLoc(--tempRow , tempCol))){
                     emu.row--;
@@ -71,8 +62,7 @@ public class allEmu
                     break;
                     
                 default:
-                break;
-                    
+                    break;       
             }
         
         emu.tile = map.terrainList[emu.row][emu.col];
@@ -100,7 +90,6 @@ public class allEmu
                     fight(humans.humanList.get(j), emuList.get(i),i, j);
                 }
             }
-
         }
     }
 
@@ -114,6 +103,7 @@ public class allEmu
             emuList.get(i).alive = false;
         }
     }
+    
     public void moveReset(){
         for(int i = 0; i< emuList.size(); i++){
             emuList.get(i).moveNum = 0;

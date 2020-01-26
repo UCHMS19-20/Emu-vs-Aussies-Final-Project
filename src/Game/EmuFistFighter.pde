@@ -19,6 +19,7 @@ class EmuFistFighter extends Emu
         this.eImage = loadImage("images/characters/fistEmu.jpg");
         this.alive = true;
     }
+    
     public void imagePrint()
     {   
         if(alive == true){  
