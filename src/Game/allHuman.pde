@@ -51,10 +51,11 @@ public class allHuman
         return intNum;
     }
     public void newHuman(){
-        if(randomNum() < 4){
+        int num = randomNum();
+        if(num< 4){
             humanList.add(new PitchForkHuman());
         }
-        else if(randomNum() == 4){
+        else if(num ==4){
             humanList.add(new GunHuman());
         }
     }

@@ -98,6 +98,7 @@ public class allEmu
                 // System.out.println(emuList.size()+ "" + humans.humanList.size());
                 if(emuList.get(i).row == humans.humanList.get(j).row && emuList.get(i).col == humans.humanList.get(j).col
                 && emuList.get(i).alive == true && humans.humanList.get(j).alive == true){
+                    System.out.println("scraa");
                     fight(humans.humanList.get(j), emuList.get(i),i, j);
                 }
             }

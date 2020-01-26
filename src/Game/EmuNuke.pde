@@ -3,7 +3,7 @@ class EmuNuke extends Emu
 
     public EmuNuke( int row, int col)
     {
-        this.attack = 500;
+        this.attack = 1000;
         this.hp = 1000;
         this.currentHp = hp;
         this.width = 75;

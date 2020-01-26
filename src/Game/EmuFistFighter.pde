@@ -3,7 +3,7 @@ class EmuFistFighter extends Emu
 
     public EmuFistFighter( int row, int col)
     {
-        this.attack = 50;
+        this.attack = 50;//It is actually two times higher
         this.hp = 100;
         this.currentHp = hp;
         this.width = 75;

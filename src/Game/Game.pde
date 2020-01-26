@@ -13,6 +13,9 @@ PImage pitchForkHumanPic;
 public PImage emuWar;
 public PImage soldierEmu;
 
+public PImage lose;
+public PImage win;
+
 public PImage a;
 public PImage w;
 public PImage s;
@@ -57,6 +60,8 @@ void setup()
     n = loadImage("images/key/n.jpg");
     pointer = loadImage("images/key/pointer.jpg");
 
+    win = loadImage("images/background/win.jpg");
+    lose = loadImage("images/background/lose.jpg");
 }
 
 void draw()
@@ -195,8 +200,11 @@ public void stateDeterminer(){
 public void lose(){
     background(255,60,100);
     textSize(70);
-    fill(0, 0, 0);
-    text("You are a big L :(", 30, 350);
+    tint(125,80);
+    image(lose,0,0,800,800);
+    fill(250, 0, 0);
+    textAlign(CENTER,CENTER);
+    text("You are a big L :(", 400, 400);
     winLoseCounter ++;
     if(winLoseCounter >= 150){
         exit();
@@ -207,7 +215,7 @@ public void win(){
     background(60,250,150);
     textSize(130);
     fill(0, 0, 0);
-    text("You Won!!!", 30, 350);
+    image(win,0,0,800,800);
     winLoseCounter ++;
     if(winLoseCounter >= 150){
         exit();
@@ -252,29 +260,29 @@ public void infoRight(){
 
     image(fistEmuPic,710,30,80,80);
     text("hp: " + 100, 750, 15);
-    text("attack: " + 100, 750, 125);
+    text("attack: " + 50, 750, 125);
 
     image(gunEmuPic,710,190,80,80);
     text("hp: " + 100, 750, 175);
-    text("attack: " + 100, 750, 285);
+    text("attack: " + 150, 750, 285);
 
     image(nukeEmuPic,710,350,80,80);
-    text("hp: " + 100, 750, 335);
-    text("attack: " + 100, 750, 445);
+    text("hp: " + 1000, 750, 335);
+    text("attack: " + 1000, 750, 445);
 
     image(pitchForkHumanPic,710,510,80,80);
-    text("hp: " + 100, 750, 495);
-    text("attack: " + 100, 750, 605);
+    text("hp: " + 400, 750, 495);
+    text("attack: " + 50, 750, 605);
 
     image(gunHumanPic,710,670,80,80);
-    text("hp: " + 100, 750, 650);
-    text("attack: " + 100, 750, 765);
+    text("hp: " + 200, 750, 650);
+    text("attack: " + 300, 750, 765);
 
     textSize(12);
     fill(255,0,0);
     text("Press 1| $60", 750, 35);
-    text("Press 2| $60", 750, 195);
-    text("Press 3| $60", 750, 355);
+    text("Press 2| $100", 750, 195);
+    text("Press 3| $400", 750, 355);
 }
 public void introduction(){
     background(125,125,125);
@@ -336,15 +344,17 @@ public void rules(){
     fill(0,0,0);
     text("Rules",400,50);
     textSize(25);
-    text("The purpose of this game is for ",400,30);
-    text("an emu to reach the enemy castle on the right.",400,60);
-    text("You lose by having a human reach your base on the left",400,90);
-    text("This is a turn base game.",400,150);
-    text("During a turn you can buy emus and",400,180);
-    text("you can move each emu one square",400,210);
-    text("You let the ai move at the end of your turn",400,240);
-    text("NOTE: If you attack a human you will",400,300);
-    text("take their attack damage",400,330);
+    text("The purpose of this game is for ",400,100);
+    text("an emu to reach the enemy castle on the right.",400,130);
+    text("You lose by having a human reach your base on the left",400,160);
+    text("This is a turn based game.",400,220);
+    text("During a turn you can buy emus and",400,250);
+    text("you can move each emu one square.",400,280);
+    text("You let the ai move at the end of your turn.",400,310);
+    text("NOTE: If you attack a human you will",400,370);
+    text("take their attack damage.",400,400);
+    text("Press k to move onto game.",400,600);
+
 }
 
 
