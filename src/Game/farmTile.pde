@@ -2,7 +2,6 @@ import java.util.*;
 class FarmTile extends Tile
 {
   String landscape = "farm";
- 
   public FarmTile(int xPos, int yPos)
   {
     xCord = xPos;

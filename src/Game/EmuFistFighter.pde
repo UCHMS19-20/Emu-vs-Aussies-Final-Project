@@ -27,7 +27,7 @@ class EmuFistFighter extends Emu
             rect(xEmu, yEmu- 10,currentHp * 0.75, 5); 
             textSize(15);
             textAlign(CENTER, TOP);            
-            text(hp, xEmu+ (width/2), yEmu-2);
+            text(currentHp, xEmu+ (width/2), yEmu-2);
         }
     }
 }

@@ -23,9 +23,31 @@ class PitchForkHuman extends Human
     }
     public int pathSet()
     {
-        float path = random(0,7);
+        float path = random(0,18);
         int intPath = (int)path;
-        return intPath;
+        System.out.println(intPath);
+        if(intPath == 0){
+            return 0;
+        }
+        else if(intPath == 1 || path == 2){
+            return 1;
+        }
+        else if(intPath> 2 && path< 5){
+            return 2;
+        }
+        else if(intPath> 5 && path< 12){
+            return 3;
+        }
+        else if(intPath> 11 && path< 15){
+            return 4;
+        }
+        else if(intPath == 15 || path == 16){
+            return 5;
+        }
+        else if(intPath == 17){
+            return 6;
+        }
+        return 0;
     }
 
     public void imagePrint(){
@@ -35,7 +57,7 @@ class PitchForkHuman extends Human
             rect(xHuman, yHuman-10,currentHp *0.75, 5); 
             textAlign(CENTER, TOP); 
             textSize(15);
-            text(hp, xHuman+ (width/2), yHuman-2);
+            text(currentHp, xHuman+ (width/2), yHuman-2);
         }
     }
     public int setPathLength()

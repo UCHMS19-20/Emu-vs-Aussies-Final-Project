@@ -25,7 +25,7 @@ class EmuGun extends Emu{
             rect(xEmu, yEmu- 10,currentHp *0.75, 5);
             textAlign(CENTER, TOP); 
             textSize(15);
-            text(hp, xEmu+ (width/2), yEmu-2);
+            text(currentHp, xEmu+ (width/2), yEmu-2);
         }
     }
 }

@@ -27,7 +27,7 @@ int introCounter = 1;
 
 void setup()
 {
-    size(700,800);
+    size(800,800);
     coin = new Coin();
     map = new AusMap(7,7); 
     emus = new allEmu();
@@ -68,30 +68,11 @@ void draw()
             break;
 
         case 3:
-            
             introduction();
             break;
 
         case 4:
-            background(125,125,125);
-            tint(125,40);
-            image(soldierEmu,0,0,700,800);
-            noTint();
-            image(a,230,120,80,80);
-            image(s,310,120,80,80);
-            image(d,390,120,80,80);
-            image(w,310,30,80,80);
-
-            image(z,150,510,80,80);
-            textSize(25);
-            text("spawns an emu",190,610);
-            image(x,470,510,80,80);
-            text("ai makes move",510,610);
-
-            image(pointer,310,300,80,80);
-            text("select emu by click",350,400);
-
-            text("press p to go to game",350,750);
+            keys();
             break;
             
         default:
@@ -127,9 +108,9 @@ void keyPressed()
                     canGenerate = false;
                 }
             }
-            if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
+            if(coin.coinAmount-coin.fistEmuCost>=0 && canGenerate == true){
                 emus.emuList.add(new EmuFistFighter(3,0));
-                coin.emuPurchase();
+                coin.fistEmuPurchase();
             }
         }
     }
@@ -142,9 +123,9 @@ void keyPressed()
                     canGenerate = false;
                 }
             }
-            if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
+            if(coin.coinAmount-coin.gunEmuCost>=0 && canGenerate == true){
                 emus.emuList.add(new EmuGun(3,0));
-                coin.emuPurchase();
+                coin.gunEmuPurchase();
             }     
         }
     }
@@ -155,9 +136,9 @@ void keyPressed()
                  canGenerate = false;
             }
         }
-        if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
+        if(coin.coinAmount-coin.nukeEmuCost>=0 && canGenerate == true){
             emus.emuList.add(new EmuNuke(3,0));
-            coin.emuPurchase();
+            coin.nukeEmuPurchase();
         }     
     }
     else if (letter.equals("l")){
@@ -213,11 +194,31 @@ public void win(){
         exit();
     }
 }
+public void keys(){
+    background(125,125,125);
+            tint(125,40);
+            image(soldierEmu,0,0,800,800);
+            noTint();
+            image(a,230,120,80,80);
+            image(s,310,120,80,80);
+            image(d,390,120,80,80);
+            image(w,310,30,80,80);
 
+            image(z,150,510,80,80);
+            textSize(25);
+            text("spawns an emu",190,610);
+            image(x,470,510,80,80);
+            text("ai makes move",510,610);
+
+            image(pointer,310,300,80,80);
+            text("select emu by click",350,400);
+
+            text("press p to go to game",350,750);
+}
 public void introduction(){
     background(125,125,125);
     tint(125, 40);
-    image(emuWar,0,0,700,800);
+    image(emuWar,0,0,800,800);
     switch(introCounter){
         case 1:
             textSize(40);

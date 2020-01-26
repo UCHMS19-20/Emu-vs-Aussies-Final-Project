@@ -44,9 +44,19 @@ public class allHuman
         move();
         turnIncrement();
     }
-    
+    public int randomNum()
+    {
+        float num = random(0,2);
+        int intNum = (int)num;
+        return intNum;
+    }
     public void newHuman(){
-        humanList.add(new PitchForkHuman());
+        if(randomNum() == 0){
+            humanList.add(new PitchForkHuman());
+        }
+        else if(randomNum() == 1){
+            humanList.add(new GunHuman());
+        }
     }
         
 

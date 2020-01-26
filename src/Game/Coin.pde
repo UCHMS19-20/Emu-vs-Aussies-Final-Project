@@ -1,6 +1,8 @@
 class Coin{
     int coinAmount;
-    int emuCost;
+    int fistEmuCost;
+    int gunEmuCost;
+    int nukeEmuCost;
     int width;
     int height;
     int xCoin;
@@ -8,7 +10,9 @@ class Coin{
     int endRound;
     PImage cImage;
     public Coin(){
-        this.emuCost = 60;
+        this.fistEmuCost = 60;
+        this.gunEmuCost = 100;
+        this.nukeEmuCost = 300;
         this.coinAmount = 100;
         this.width = 100;
         this.height = 100;
@@ -43,7 +47,14 @@ class Coin{
     public void endOfRound(){
         coinAmount +=endRound;
     }
-    public void emuPurchase(){
-        coinAmount-=emuCost;
+    public void fistEmuPurchase(){
+        coinAmount-=fistEmuCost;
     }
+    public void gunEmuPurchase(){
+        coinAmount-=gunEmuCost;
+    }
+    public void nukeEmuPurchase(){
+        coinAmount-=nukeEmuCost;
+    }
+
 }
