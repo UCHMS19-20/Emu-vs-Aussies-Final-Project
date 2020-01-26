@@ -5,7 +5,7 @@ class TileEmuBase extends Tile{
     */
     public TileEmuBase(int xPos, int yPos){
         /**
-        * Constructor for human base tile. Position and image variables are set
+        * Constructor for emu base tile. Position and image variables are set
         */
         xCord = xPos;
         yCord = yPos;

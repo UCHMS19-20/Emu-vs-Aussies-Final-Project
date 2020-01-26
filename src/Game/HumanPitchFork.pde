@@ -27,7 +27,7 @@ class HumanPitchFork extends Human{
 
     public int pathSet(){
         /**
-        * Returns a random number representing a path 
+        * Returns a number representing a path 
         * based on the output from random function.
         */
         float path = random(0,18);
