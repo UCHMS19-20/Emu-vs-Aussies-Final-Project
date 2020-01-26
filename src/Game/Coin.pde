@@ -29,9 +29,10 @@ class Coin{
     }
 
     public void printText(){
+        textAlign(CENTER,CENTER);
         textSize(60);
         fill(122, 102, 153);
-        text(coinAmount, 200, 780);
+        text(coinAmount, 260, 750);
     }
 
     public void rectPrint(){

@@ -23,7 +23,7 @@ int state = 3;
 int winLoseCounter = 0;
 
 //IntroCounter
-int introCounter = 0;
+int introCounter = 1;
 
 void setup()
 {
@@ -73,26 +73,25 @@ void draw()
             break;
 
         case 4:
-            delay(4000);
-            background(250,250,250);
-            tint(125,200);
+            background(125,125,125);
+            tint(125,40);
             image(soldierEmu,0,0,700,800);
             noTint();
-            image(a,30,120,80,80);
-            image(s,120,120,80,80);
-            image(d,210,120,80,80);
-            image(w,120,30,80,80);
+            image(a,230,120,80,80);
+            image(s,310,120,80,80);
+            image(d,390,120,80,80);
+            image(w,310,30,80,80);
 
-            image(z,600,700,80,80);
-            textSize(15);
-            text("spawn emu",600,790);
-            image(x,400,700,80,80);
-            text("farmer ai makes move",350,790);
+            image(z,150,510,80,80);
+            textSize(25);
+            text("spawns an emu",190,610);
+            image(x,470,510,80,80);
+            text("ai makes move",510,610);
 
-            image(pointer,300,300,80,80);
-            text("select emu by click",280,400);
+            image(pointer,310,300,80,80);
+            text("select emu by click",350,400);
 
-            text("press p to go to game",0,600);
+            text("press p to go to game",350,750);
             break;
             
         default:
@@ -133,7 +132,7 @@ void keyPressed()
     }
     else if (letter.equals("l")){
         System.out.println("key pressed");
-        state = 4;
+        introCounter ++;
     }
     else if(letter.equals("p")){
         state = 0;
@@ -187,53 +186,56 @@ public void win(){
 
 public void introduction(){
     background(125,125,125);
-    tint(125, 80);
+    tint(125, 40);
     image(emuWar,0,0,700,800);
     switch(introCounter){
         case 1:
-            textSize(20);
-            fill(255,0,0);
-            text("For many years we, the emus, have been oppressed", 130, 350);
+            textSize(40);
+            textAlign(CENTER,CENTER);
+            fill(60,200,60);
+            text("For many years we,", 350, 300);
+            text("the emus,", 350, 350);
+            text("have been oppressed.", 350, 400);
+            textSize(25);
+            text("Press l to Continue",350,600);
             break;
             
         case 2:
-            textSize(20);
-            text("The farmers of australia have kept all the food from us", 60, 350);
-            text("and waged the Emu War on us",175,400);
-            textSize(15);
-            text("Press l to skip",300,600);
-            delay(5000);
+            textSize(40);
+            text("The farmers of australia have", 350, 300);
+            text(" kept all the food from us,", 350, 350);
+            text(" and waged the Emu War on us.",350,400);
+            textSize(25);
+            text("Press l to Continue",350,600);
             break;
             
         case 3:
-            textSize(20);
-            text("Many of our comrades have died",170,350);
-            textSize(15);
-            text("Press l to skip",300,600);
-            delay(8000);
+            textSize(40);
+            text("Many of our comrades have died.",350,350);
+            textSize(25);
+            text("Press l to Continue",350,600);
             break;
             
         case 4:
-            textSize(20);
-            text("Now it is time to avenge the deaths of our comrades!!!!",70,350);
-            textSize(15);
-            text("Press l to skip",300,600);
-            delay(3000);
+            textSize(40);
+            text("Now it is time to avenge the ",350,350);
+            text(" deaths of our comrades!!!!",350,400);
+            textSize(25);
+            text("Press l to Continue",350,600);
             break;
             
         case 5:
-            textSize(20);
-            text("We will be waging emu war 2.0. Only now, we will ATTACK!!!!",60,350);
-            textSize(15);
-            text("Press l to skip",300,600);
-            delay(4000);
-            state = 4;
+            textSize(40);
+            text("We will be waging emu war 2.0.",350,350);
+            text("Only now, we will ATTACK!!!!",350,400);
+            textSize(25);
+            text("Press l to Continue",350,600);
             break;
         default:
+            state = 4;
             break;
-            
+        
     }
-    introCounter++;
 }
 
 
