@@ -17,7 +17,7 @@ class Coin{
         this.width = 95;
         this.height = 95;
         this.xCoin = 380;
-        this.yCoin = 702;
+        this.yCoin = 703;
         this.endRound = 80;
         this.cImage = loadImage("images/characters/coin.jpg");
     }

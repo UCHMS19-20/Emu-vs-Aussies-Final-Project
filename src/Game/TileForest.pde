@@ -1,9 +1,7 @@
 import java.util.*;
-class ForestTile extends Tile
+class TileForest extends Tile
 {
-  String landscape = "forestTile";
- 
-  public ForestTile(int xPos, int yPos)
+  public TileForest(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;

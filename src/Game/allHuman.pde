@@ -49,10 +49,10 @@ public class allHuman
     public void newHuman(){
         int num = randomNum();
         if(num< 3){
-            humanList.add(new PitchForkHuman());
+            humanList.add(new HumanPitchFork());
         }
         else if(num ==4 || num == 3){
-            humanList.add(new GunHuman());
+            humanList.add(new HumanGun());
         }
     }
         

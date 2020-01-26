@@ -6,8 +6,8 @@ public Coin coin;
 PImage fistEmuPic;
 PImage gunEmuPic;
 PImage nukeEmuPic;
-PImage gunHumanPic;
-PImage pitchForkHumanPic;
+PImage humanGunPic;
+PImage humanPitchForkPic;
 
 
 public PImage emuWar;
@@ -48,8 +48,8 @@ void setup()
     fistEmuPic = loadImage("images/characters/fistEmu.jpg");
     gunEmuPic = loadImage("images/characters/gunEmu.jpg");
     nukeEmuPic = loadImage("images/characters/nukeEmu.jpg");
-    pitchForkHumanPic = loadImage("images/characters/man.jpg");
-    gunHumanPic = loadImage("images/characters/gunHuman.jpg");
+    humanPitchForkPic = loadImage("images/characters/forkHuman.jpg");
+    humanGunPic = loadImage("images/characters/humanGun.jpg");
     a = loadImage("images/key/a.jpg");
     w = loadImage("images/key/w.jpg");
     s = loadImage("images/key/s.jpg");
@@ -270,11 +270,11 @@ public void infoRight(){
     text("hp: " + 1000, 750, 335);
     text("attack: " + 1000, 750, 445);
 
-    image(pitchForkHumanPic,710,510,80,80);
+    image(humanPitchForkPic,710,510,80,80);
     text("hp: " + 400, 750, 495);
     text("attack: " + 50, 750, 605);
 
-    image(gunHumanPic,710,670,80,80);
+    image(humanGunPic,710,670,80,80);
     text("hp: " + 200, 750, 650);
     text("attack: " + 300, 750, 765);
 

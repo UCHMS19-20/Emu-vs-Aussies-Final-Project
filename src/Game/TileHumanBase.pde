@@ -1,9 +1,7 @@
 import java.util.*;
-class FortTile extends Tile
+class TileHumanBase extends Tile
 {
-  String landscape = "oceanTile";
-
-  public FortTile(int xPos, int yPos)
+  public TileHumanBase(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;

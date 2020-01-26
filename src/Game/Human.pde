@@ -1,5 +1,9 @@
 abstract class Human
 {    
+    /**
+    * Defines variables that all classes 
+    * which extend this will use.
+    */
     int attack;
     int hp;
     int currentHp;
@@ -12,14 +16,14 @@ abstract class Human
     int width;
     int height;
     int turn;
-    int number;
-    String name;
     Tile tile;
-    Tilemap tileMap;
     PImage hImage;
     boolean alive;
     boolean moved;
 
-
+    /**
+    * image print function which will 
+    * be defined in classes which extend this
+    */
     public abstract void imagePrint();
 }

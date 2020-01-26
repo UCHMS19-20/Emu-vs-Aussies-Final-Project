@@ -1,9 +1,7 @@
 import java.util.*;
-class PlainTile extends Tile
-{
-  String landscape = "plainTile";
- 
-  public PlainTile(int xPos, int yPos)
+class TilePlain extends Tile
+{ 
+  public TilePlain(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;

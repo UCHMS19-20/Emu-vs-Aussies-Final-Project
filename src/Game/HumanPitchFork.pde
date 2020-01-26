@@ -1,28 +1,35 @@
-class GunHuman extends Human
+class HumanPitchFork extends Human
 {
-    int [] pathRow1;
-    public GunHuman()
-    {
+    /**
+    * Class creates a pitch fork human which is a type of Human.
+    */
+    public HumanPitchFork(){
+    /**
+    * Constructor for a humanPitchFork.
+    * Fighting, location and path variables are set.
+    */
         this.typePath = pathSet();
         this.pathLength = setPathLength();
-        this.attack = 300;
-        this.hp = 200;
+        this.attack = 50;
+        this.hp = 400; // the original hp
         this.currentHp = hp;
         this.width = 75;
         this.height = 75;
         this.row = setRow();
         this.col = setCol();
-        this.turn = 0;
-        this.tile = map.terrainList[row][col];
-        this.name = "human";
+        this.turn = 0; // keeps track of turns since genrated
+        this.tile = map.terrainList[row][col]; // tile that emu is on
         this.xHuman = this.tile.xCord + 13;
         this.yHuman = this.tile.yCord + 13;
-        this.hImage = loadImage("images/characters/gunHuman.jpg");
-        this.alive = true;
-        this.moved = true;
+        this.hImage = loadImage("images/characters/forkHuman.jpg"); // loads image
+        this.alive = true; //checks if human is alive
+        this.moved = true; // checks if human moved
     }
-    public int pathSet()
-    {
+    public int pathSet(){
+        /**
+        * Returns a random number representing a path 
+        * based on the output from random function.
+        */
         float path = random(0,18);
         int intPath = (int)path;
         if(intPath == 0){
@@ -50,19 +57,23 @@ class GunHuman extends Human
     }
 
     public void imagePrint(){
+        /**
+        * Prints the image, the health bar and the hp if human is alive.
+        */
         if(alive == true){
             image(hImage,xHuman,yHuman,width,height);
             fill(250,0,0);
-            rect(xHuman, yHuman-10,currentHp *(0.75/2), 5); 
+            rect(xHuman, yHuman-10,currentHp *0.75/4, 5); 
             textAlign(CENTER, TOP); 
             textSize(15);
             text(currentHp, xHuman+ (width/2), yHuman-2);
         }
     }
-    public int setPathLength()
-    {
-        switch(typePath)
-        {   
+    public int setPathLength(){   
+        /**
+        * Sets and returns path length based on path previously choosen.
+        */
+        switch(typePath){   
             case 0:
                 return humans.pathRow0.length;
                 
@@ -88,13 +99,13 @@ class GunHuman extends Human
                 return 0;
         }
     }
-    public int setCol()
-    {
-        switch(typePath)
-        {   
+    public int setCol(){
+        /**
+        * Sets and returns the spawn column based off of the path choosen.
+        */
+        switch(typePath){   
             case 0:
                 return humans.pathCol0[0];
-                
                 
             case 1:
                 return humans.pathCol1[0];
@@ -114,13 +125,14 @@ class GunHuman extends Human
             case 6:
                 return humans.pathCol6[0];
             default:
-                return 0;
-
-                
+                return 0;     
         }
     }
     public int setRow()
     {
+        /**
+        * Sets and returns the spawn row based off of the path choosen.
+        */
         switch(typePath)
         {   
             case 0:
@@ -144,8 +156,7 @@ class GunHuman extends Human
             case 6:
                 return humans.pathRow6[0];
             default:
-                return 0;
-                
+                return 0;   
         }
     }
 }

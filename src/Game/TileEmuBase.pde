@@ -1,8 +1,7 @@
 import java.util.*;
-class FarmTile extends Tile
+class TileEmuBase extends Tile
 {
-  String landscape = "farm";
-  public FarmTile(int xPos, int yPos)
+  public TileEmuBase(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;

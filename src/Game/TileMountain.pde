@@ -1,9 +1,8 @@
 import java.util.*;
-class MountainTile extends Tile
+class TileMountain extends Tile
 {
-  String landscape = "mountainTile";
  
-  public MountainTile(int xPos, int yPos)
+  public TileMountain(int xPos, int yPos)
   {
     xCord = xPos;
     yCord = yPos;

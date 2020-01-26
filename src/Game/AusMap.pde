@@ -35,22 +35,22 @@ class AusMap extends Tilemap
     for(int i = 0; i< rows; i++){
       for(int j = 0; j< cols; j++){
         if(numT[i*(cols)+(j+1)-1] == 1){
-          terrainList[i][j] = new PlainTile(x,y);
+          terrainList[i][j] = new TilePlain(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 2){
-          terrainList[i][j] = new ForestTile(x,y);
+          terrainList[i][j] = new TileForest(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 3){
-          terrainList[i][j] = new MountainTile(x,y);
+          terrainList[i][j] = new TileMountain(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 4){
-          terrainList[i][j] = new DesertTile(x,y);
+          terrainList[i][j] = new TileDesert(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 5){
-          terrainList[i][j] = new FortTile(x,y);
+          terrainList[i][j] = new TileHumanBase(x,y);
         }
         else if(numT[i*(cols)+(j+1)-1] == 6){
-          terrainList[i][j] = new FarmTile(x,y);
+          terrainList[i][j] = new TileEmuBase(x,y);
         }
         x+=100;
       }
