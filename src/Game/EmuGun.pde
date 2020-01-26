@@ -1,9 +1,7 @@
-class EmuFistFighter extends Emu
-{
+class EmuGun extends Emu{
 
-    public EmuFistFighter( int row, int col)
-    {
-        this.attack = 50;
+    public EmuGun( int row, int col){
+        this.attack = 200;
         this.hp = 100;
         this.currentHp = hp;
         this.width = 75;
@@ -16,7 +14,7 @@ class EmuFistFighter extends Emu
         this.tile = map.terrainList[row][col];
         this.xEmu = this.tile.xCord + 13;
         this.yEmu = this.tile.yCord + 13;
-        this.eImage = loadImage("images/characters/fistEmu.jpg");
+        this.eImage = loadImage("images/characters/gunEmu.jpg");
         this.alive = true;
     }
     public void imagePrint()
@@ -24,9 +22,9 @@ class EmuFistFighter extends Emu
         if(alive == true){  
             image(eImage,xEmu,yEmu,width,height);
             fill(255,0,0);
-            rect(xEmu, yEmu- 10,currentHp * 0.75, 5); 
+            rect(xEmu, yEmu- 10,currentHp *0.75, 5);
+            textAlign(CENTER, TOP); 
             textSize(15);
-            textAlign(CENTER, TOP);            
             text(hp, xEmu+ (width/2), yEmu-2);
         }
     }

@@ -1,12 +1,12 @@
-class PitchForkHuman extends Human
+class GunHuman extends Human
 {
     int [] pathRow1;
-    public PitchForkHuman()
+    public GunHuman()
     {
         this.typePath = pathSet();
         this.pathLength = setPathLength();
         this.attack = 100;
-        this.hp = 100;
+        this.hp = 300;
         this.currentHp = hp;
         this.width = 75;
         this.height = 75;

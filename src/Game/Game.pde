@@ -109,16 +109,46 @@ void keyPressed()
     {
         emus.move(letter);
     }
-    else if(letter.equals("x"))
+    else if(letter.equals("n"))
     {
-        humans.movedFalse();
-        humans.fullTurn();
-        emus.moveReset();
-        coin.endOfRound();
+        if(state == 0){
+            humans.movedFalse();
+            humans.fullTurn();
+            emus.moveReset();
+            coin.endOfRound();
+        }
     }
-    else if(letter.equals("z"))
+    else if(letter.equals("1"))
     {  
-        System.out.println("z");
+        if (state == 0){
+            boolean canGenerate = true;
+            for(int i = 0;i< emus.emuList.size(); i++){
+                if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
+                    canGenerate = false;
+                }
+            }
+            if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
+                emus.emuList.add(new EmuFistFighter(3,0));
+                coin.emuPurchase();
+            }
+        }
+    }
+    else if(letter.equals("2")){
+        if (state == 0){
+            System.out.println("2");
+            boolean canGenerate = true;
+            for(int i = 0;i< emus.emuList.size(); i++){
+                if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
+                    canGenerate = false;
+                }
+            }
+            if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
+                emus.emuList.add(new EmuGun(3,0));
+                coin.emuPurchase();
+            }     
+        }
+    }
+    else if(letter.equals("3")){
         boolean canGenerate = true;
         for(int i = 0;i< emus.emuList.size(); i++){
             if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
@@ -126,9 +156,9 @@ void keyPressed()
             }
         }
         if(coin.coinAmount-coin.emuCost>=0 && canGenerate == true){
-            emus.emuList.add(new EmuFistFighter(3,0));
+            emus.emuList.add(new EmuNuke(3,0));
             coin.emuPurchase();
-        }   
+        }     
     }
     else if (letter.equals("l")){
         System.out.println("key pressed");
