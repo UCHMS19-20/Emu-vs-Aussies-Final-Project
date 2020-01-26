@@ -1,4 +1,8 @@
 class Coin{
+    /**
+    * This class controls the monetary transactions and the images representing them.
+    * There are also some background objects in this class that are near the coin images.
+    */
     int coinAmount;
     int fistEmuCost;
     int gunEmuCost;
@@ -11,6 +15,9 @@ class Coin{
     PImage cImage;
 
     public Coin(){
+        /**
+        * Constructor for coin class. Position, image, size and cost variables are set
+        */
         this.fistEmuCost = 60;
         this.gunEmuCost = 100;
         this.nukeEmuCost = 400;
@@ -24,16 +31,25 @@ class Coin{
     }
 
     public void printAllVisuals(){
+        /**
+        * Prints all visuals
+        */
         rectPrint();
         imagePrint();
         printText();
     }
 
-    public void imagePrint(){      
+    public void imagePrint(){     
+        /**
+        * prints the coin image
+        */ 
         image(cImage,xCoin,yCoin,width,height);
     }
 
     public void printText(){
+        /**
+        * Prints all the text near the coin area
+        */
         textAlign(CENTER,CENTER);
         textSize(60);
         fill(122, 102, 153);
@@ -45,23 +61,38 @@ class Coin{
     }
 
     public void rectPrint(){
+        /**
+        * Prints the rectangle that is the background for the coin image
+        */
         fill(150,250,130);
         rect(0,700,700,100);
     }
 
     public void endOfRound(){
+        /**
+        * adds coins based on endRound variable
+        */
         coinAmount +=endRound;
     }
 
     public void fistEmuPurchase(){
+        /**
+        * subtracts coins based on fistEmuCost variable
+        */
         coinAmount-=fistEmuCost;
     }
 
     public void gunEmuPurchase(){
+        /**
+        * subtracts coins based on gunEmuCost variable
+        */
         coinAmount-=gunEmuCost;
     }
 
     public void nukeEmuPurchase(){
+        /**
+        * subtracts coins based on nukeEmuCost variable
+        */
         coinAmount-=nukeEmuCost;
     }
 }

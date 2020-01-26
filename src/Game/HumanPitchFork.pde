@@ -4,7 +4,7 @@ class HumanPitchFork extends Human{
     */
     public HumanPitchFork(){
         /**
-        * Constructor for a humanPitchFork.
+        * Constructor for a HumanPitchFork.
         * Fighting, location and path variables are set.
         */
         this.typePath = pathSet();
@@ -17,7 +17,7 @@ class HumanPitchFork extends Human{
         this.row = setRow();
         this.col = setCol();
         this.turn = 0; // keeps track of turns since genrated
-        this.tile = map.terrainList[row][col]; // tile that emu is on
+        this.tile = map.terrainList[row][col]; // tile that human is on
         this.xHuman = this.tile.xCord + 13;
         this.yHuman = this.tile.yCord + 13;
         this.hImage = loadImage("images/characters/forkHuman.jpg"); // loads image

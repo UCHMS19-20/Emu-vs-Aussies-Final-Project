@@ -4,7 +4,7 @@ class HumanGun extends Human{
     */
     public HumanGun(){
         /**
-        * Constructor for a HumanGun which is a type of human. 
+        * Constructor for HumanGun. 
         * Fighting, location and path variables are set.
         */
         this.typePath = pathSet();
@@ -16,8 +16,8 @@ class HumanGun extends Human{
         this.height = 75;
         this.row = setRow();
         this.col = setCol();
-        this.turn = 0; // keeps track of turns since genrated
-        this.tile = map.terrainList[row][col]; // tile that emu is on
+        this.turn = 0; // keeps track of turns since generated
+        this.tile = map.terrainList[row][col]; // tile that human is on
         this.xHuman = this.tile.xCord + 13;
         this.yHuman = this.tile.yCord + 13;
         this.hImage = loadImage("images/characters/humanGun.jpg"); // loads image

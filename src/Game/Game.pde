@@ -1,52 +1,70 @@
+/**
+* This is the main file for this project.
+* All the states, most of the text and the introduction is stored here
+*/   
+
+// Declares maps, emus, coins and humans
 public Tilemap map;
 public EmuAll emus;
 public HumanAll humans;
 public Coin coin;
 
+// declares all charcter, key, and background pictures
 PImage fistEmuPic;
 PImage gunEmuPic;
 PImage nukeEmuPic;
 PImage humanGunPic;
 PImage humanPitchForkPic;
 
-public PImage emuWar;
-public PImage soldierEmu;
-public PImage lose;
-public PImage win;
+PImage emuWar;
+PImage soldierEmu;
+PImage lose;
+PImage win;
 
-public PImage a;
-public PImage w;
-public PImage s;
-public PImage d;
-public PImage one;
-public PImage two;
-public PImage three;
-public PImage n;
-public PImage pointer;
+PImage a;
+PImage w;
+PImage s;
+PImage d;
+PImage one;
+PImage two;
+PImage three;
+PImage n;
+PImage pointer;
 
-//0: Game| 1: Win| 2: Lose| 3: Introduction| 4: Keys
+// 0: Game| 1: Win| 2: Lose| 3: Introduction| 4: Keys| 5: rules 
 int state = 3;
 
-//Time Counter
+// Time Counter that starts after the game is won/lost
 int winLoseCounter = 0;
 
-//IntroCounter
+// counter for the different stages of the introduction
 int introCounter = 1;
 
+
 void setup(){
+    /**
+    * Defines the coins,maps,emus, and humans. 
+    * It also sets the frame rate and loads all the images
+    */   
     size(800,800);
     coin = new Coin();
     map = new TileAusMap(7,7); 
     emus = new EmuAll();
     humans = new HumanAll();
+
     frameRate(30);
+
     emuWar = loadImage("images/background/emuWar.jpg");
     soldierEmu = loadImage("images/background/soldierEmu.jpg");
+    win = loadImage("images/background/win.jpg");
+    lose = loadImage("images/background/lose.jpg");
+
     fistEmuPic = loadImage("images/characters/fistEmu.jpg");
     gunEmuPic = loadImage("images/characters/gunEmu.jpg");
     nukeEmuPic = loadImage("images/characters/nukeEmu.jpg");
     humanPitchForkPic = loadImage("images/characters/forkHuman.jpg");
     humanGunPic = loadImage("images/characters/humanGun.jpg");
+
     a = loadImage("images/key/a.jpg");
     w = loadImage("images/key/w.jpg");
     s = loadImage("images/key/s.jpg");
@@ -56,17 +74,20 @@ void setup(){
     three = loadImage("images/key/three.jpg");
     n = loadImage("images/key/n.jpg");
     pointer = loadImage("images/key/pointer.jpg");
-
-    win = loadImage("images/background/win.jpg");
-    lose = loadImage("images/background/lose.jpg");
 }
 
 void draw(){
+    /**
+    * Based on state, certain code relating to winning,
+    * losing, the normal game, and the introduction are run
+    */   
 
-    stateDeterminer();
+    //Determines if win or lose conditions are met and changes state accordingly
+    winLoseDeterminer();
 
     switch(state){
         case 0:
+            //Normal game
             noTint();
             background(250,250,250);
             infoRight();
@@ -78,41 +99,50 @@ void draw(){
             break;
             
         case 1:
+            //Win case
             win();
             break;
 
         case 2:
+            //Lose case
             lose();
             break;
 
         case 3:
+            //Introduction slideshow case
             introduction();
             break;
 
         case 4:
+            //keys shown case
             keys();
             break;
 
         case 5:
+            //Rules case
             rules();
 
         default:
-            break;
-            
+            break;       
     }
 }
 
+void keyPressed(){
+    /**
+    * Based off of the key pressed on the computer certain code is run
+    */   
 
-
-void keyPressed()
-{
+    //Makes letter variable based on key pressed
     String letter = Character.toString(key);
+
     if (letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w")){
+        //If a, s, d, or w are pressed, emus move function is called
         emus.move(letter);
     }
 
     else if(letter.equals("n"))
     {
+        //If n is pressed the human ai makes its move
         if(state == 0){
             humans.movedFalse();
             humans.fullTurn();
@@ -120,8 +150,11 @@ void keyPressed()
             coin.endOfRound();
         }
     }
+
     else if(letter.equals("1"))
-    {  
+    {
+        //  If 1 is pressed, the spawn area is open, and there are 
+        //  enough coins a fist fighter emu is spawned and purchased.
         if (state == 0){
             boolean canGenerate = true;
             for(int i = 0;i< emus.emuList.size(); i++){
@@ -137,6 +170,8 @@ void keyPressed()
         }
     }
     else if(letter.equals("2")){
+        //  If 2 is pressed, the spawn area is open, and there are 
+        //  enough coins a gun emu is spawned and purchased.
         if (state == 0){
             boolean canGenerate = true;
             for(int i = 0;i< emus.emuList.size(); i++){
@@ -151,6 +186,8 @@ void keyPressed()
         }
     }
     else if(letter.equals("3")){
+        //  If 3 is pressed, the spawn area is open, and there are 
+        //  enough coins a nuke emu is spawned and purchased.
         boolean canGenerate = true;
         for(int i = 0;i< emus.emuList.size(); i++){
             if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
@@ -164,36 +201,49 @@ void keyPressed()
     }
 
     else if (letter.equals("g")){
+        // The intro slideshow moves on to next slide if g is pressed
         introCounter ++;
     }
 
     else if(letter.equals("h")){
+        // The state becomes 4 if h is pressed.
         state = 4;
     }
 
     else if(letter.equals("j")){
+        // The state becomes 4 if h is pressed.
         state = 5;
     }
 
     else if(letter.equals("k")){
+        // The state becomes 4 if h is pressed.
         state = 0;
     }
 }
 
-void mouseClicked()
-{
+void mouseClicked(){
+    /**
+    * If the mouse is clicked the x and y coordinates 
+    * are passed into the emus select function
+    */   
     int x = mouseX;
     int y = mouseY;
     emus.select(x,y);
 }
 
-public void stateDeterminer(){
+public void winLoseDeterminer(){
+    /**
+    * If emus reach the human base, the game is won.
+    * If the humans reach the emu base the game is lost.
+    */   
+
     //Win
     for(int i = 0; i < emus.emuList.size(); i++){
         if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 6){
             state = 1;
         }
     }
+
     //Lose
     for(int i = 0; i < humans.humanList.size(); i++){
         if(humans.humanList.get(i).turn >=(humans.humanList.get(i).pathLength)){
@@ -203,6 +253,10 @@ public void stateDeterminer(){
 }
 
 public void lose(){
+    /**
+    * Lose text is printed along with a background image.
+    * Once this function is run 150 times by draw() the game ends
+    */   
     background(255,60,100);
     textSize(70);
     tint(125,80);
@@ -217,6 +271,10 @@ public void lose(){
 }
 
 public void win(){
+    /**
+    * A background image is printed.
+    * Once this function is run 150 times by draw() the game ends
+    */   
     background(60,250,150);
     textSize(130);
     fill(0, 0, 0);
@@ -228,6 +286,9 @@ public void win(){
 }
 
 public void keys(){
+    /**
+    * Prints all the key images along with the relevant discriptions
+    */   
     background(125,125,125);
     tint(125,40);
     image(soldierEmu,0,0,800,800);
@@ -259,6 +320,11 @@ public void keys(){
 }
 
 public void infoRight(){
+    /**
+    * Prints character images and stats on the right
+    * side of the screen during the game.
+    * There is also a background rectangle image
+    */   
     fill(188, 238, 153);
     rect(700,0,100,800);
     
@@ -294,6 +360,11 @@ public void infoRight(){
 }
 
 public void introduction(){
+    /**
+    * Prints a different introduction slideshow
+    * text based on the introCounter value.
+    * There is also an image background printed
+    */   
     background(125,125,125);
     tint(125, 40);
     image(emuWar,0,0,800,800);
@@ -348,10 +419,12 @@ public void introduction(){
             text("Press h to Continue",400,600);
             break;
     }
-    
 }
 
 public void rules(){
+    /**
+    * Prints rule text with an image in the background
+    */   
     background(130,130,230);
     textSize(40);
     textAlign(CENTER, CENTER);

@@ -1,7 +1,7 @@
 abstract class Emu
 {
     /**
-    * Defines variables that all classes 
+    * Defines variables and functions that all classes 
     * which extend this will use.
     */
     int attack;
@@ -18,9 +18,7 @@ abstract class Emu
     Tile tile;
     Tilemap tileMap;
     PImage eImage;
-    String name;
     boolean alive;
-    int healthBarLength;
 
     /**
     * image print function which will 
