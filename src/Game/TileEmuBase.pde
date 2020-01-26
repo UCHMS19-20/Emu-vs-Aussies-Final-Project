@@ -9,6 +9,6 @@ class TileEmuBase extends Tile{
         */
         xCord = xPos;
         yCord = yPos;
-        tImage = loadImage("images/tiles/farm.jpg");
+        tImage = loadImage("images/tiles/emuBase.jpg");
     }  
 }

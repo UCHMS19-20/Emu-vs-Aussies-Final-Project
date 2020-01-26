@@ -9,6 +9,6 @@ class TileHumanBase extends Tile{
         */
         xCord = xPos;
         yCord = yPos;
-        tImage = loadImage("images/tiles/fort.jpg");
+        tImage = loadImage("images/tiles/humanBase.jpg");
     }
 }
