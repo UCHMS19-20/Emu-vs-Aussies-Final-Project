@@ -25,7 +25,6 @@ class GunHuman extends Human
     {
         float path = random(0,18);
         int intPath = (int)path;
-        System.out.println(intPath);
         if(intPath == 0){
             return 0;
         }

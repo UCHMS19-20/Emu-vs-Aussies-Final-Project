@@ -137,7 +137,6 @@ void keyPressed()
     }
     else if(letter.equals("2")){
         if (state == 0){
-            System.out.println("2");
             boolean canGenerate = true;
             for(int i = 0;i< emus.emuList.size(); i++){
                 if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 0){
@@ -163,7 +162,6 @@ void keyPressed()
         }     
     }
     else if (letter.equals("g")){
-        System.out.println("key pressed");
         introCounter ++;
     }
     else if(letter.equals("h")){
@@ -189,14 +187,12 @@ public void stateDeterminer(){
     for(int i = 0; i < emus.emuList.size(); i++){
         if(emus.emuList.get(i).row == 3 && emus.emuList.get(i).col == 6){
             state = 1;
-            System.out.println("win");
         }
     }
     //Lose
     for(int i = 0; i < humans.humanList.size(); i++){
         if(humans.humanList.get(i).turn >=(humans.humanList.get(i).pathLength)){
             state = 2;
-            System.out.println("lose");
         }
     }
 }

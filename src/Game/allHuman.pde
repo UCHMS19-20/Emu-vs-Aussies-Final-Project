@@ -24,10 +24,6 @@ public class allHuman
         for(int i = 0; i < humanList.size(); i++){
             if(humanList.get(i).alive == true && humanList.get(i).moved == true){
                 humanList.get(i).turn +=1;
-                System.out.println("yes");
-            }
-            else {
-                System.out.println("no");
             }
         }
     }
@@ -138,7 +134,6 @@ public class allHuman
     public boolean humanCollision(int row,int col, int index){
         for(int i = 0;i< humanList.size();i++){
              if(row == humanList.get(i).row && col == humanList.get(i).col && humanList.get(i).alive == true){
-                 System.out.println("true");
                  return true;
              }
         }
