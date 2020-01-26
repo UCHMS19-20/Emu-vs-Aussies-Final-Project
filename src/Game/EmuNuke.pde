@@ -3,8 +3,8 @@ class EmuNuke extends Emu
 
     public EmuNuke( int row, int col)
     {
-        this.attack = 1000;
-        this.hp = 500;
+        this.attack = 500;
+        this.hp = 1000;
         this.currentHp = hp;
         this.width = 75;
         this.height = 75;
@@ -24,7 +24,7 @@ class EmuNuke extends Emu
         if(alive == true){  
             image(eImage,xEmu,yEmu,width,height);
             fill(255,0,0);
-            rect(xEmu, yEmu-10,currentHp *0.15, 5); 
+            rect(xEmu, yEmu-10,currentHp *0.075, 5); 
             textSize(15);
             textAlign(CENTER, TOP);
             text(currentHp, xEmu+ (width/2), yEmu-2);

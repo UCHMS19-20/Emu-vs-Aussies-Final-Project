@@ -46,15 +46,15 @@ public class allHuman
     }
     public int randomNum()
     {
-        float num = random(0,2);
+        float num = random(0,5);
         int intNum = (int)num;
         return intNum;
     }
     public void newHuman(){
-        if(randomNum() == 0){
+        if(randomNum() < 4){
             humanList.add(new PitchForkHuman());
         }
-        else if(randomNum() == 1){
+        else if(randomNum() == 4){
             humanList.add(new GunHuman());
         }
     }

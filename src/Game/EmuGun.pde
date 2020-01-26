@@ -1,7 +1,7 @@
 class EmuGun extends Emu{
 
     public EmuGun( int row, int col){
-        this.attack = 200;
+        this.attack = 150;
         this.hp = 100;
         this.currentHp = hp;
         this.width = 75;

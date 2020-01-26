@@ -5,8 +5,8 @@ class PitchForkHuman extends Human
     {
         this.typePath = pathSet();
         this.pathLength = setPathLength();
-        this.attack = 100;
-        this.hp = 100;
+        this.attack = 50;
+        this.hp = 400;
         this.currentHp = hp;
         this.width = 75;
         this.height = 75;
@@ -54,7 +54,7 @@ class PitchForkHuman extends Human
         if(alive == true){
             image(hImage,xHuman,yHuman,width,height);
             fill(250,0,0);
-            rect(xHuman, yHuman-10,currentHp *0.75, 5); 
+            rect(xHuman, yHuman-10,currentHp *0.75/4, 5); 
             textAlign(CENTER, TOP); 
             textSize(15);
             text(currentHp, xHuman+ (width/2), yHuman-2);

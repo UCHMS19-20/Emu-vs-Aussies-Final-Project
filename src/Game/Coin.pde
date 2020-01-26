@@ -12,7 +12,7 @@ class Coin{
     public Coin(){
         this.fistEmuCost = 60;
         this.gunEmuCost = 100;
-        this.nukeEmuCost = 300;
+        this.nukeEmuCost = 400;
         this.coinAmount = 100;
         this.width = 100;
         this.height = 100;

@@ -5,8 +5,8 @@ class GunHuman extends Human
     {
         this.typePath = pathSet();
         this.pathLength = setPathLength();
-        this.attack = 100;
-        this.hp = 300;
+        this.attack = 300;
+        this.hp = 200;
         this.currentHp = hp;
         this.width = 75;
         this.height = 75;
@@ -54,7 +54,7 @@ class GunHuman extends Human
         if(alive == true){
             image(hImage,xHuman,yHuman,width,height);
             fill(250,0,0);
-            rect(xHuman, yHuman-10,currentHp *(0.75/3), 5); 
+            rect(xHuman, yHuman-10,currentHp *(0.75/2), 5); 
             textAlign(CENTER, TOP); 
             textSize(15);
             text(currentHp, xHuman+ (width/2), yHuman-2);
