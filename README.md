@@ -1,10 +1,8 @@
-# 
+# Description
 
-Please note that this website and the repository associated with it are the official source of info for the project. I will post all updates here. Please note that my updates will not be reflected in your repository, only in mine. Updates to the assignment info will be posted [here](https://jgerstein.github.io/FinalProject19/), resources will be on [the resources page](https://jgerstein.github.io/FinalProject19/resources), and sample code will be in the main repository's [examples](https://github.com/jgerstein/FinalProject19/tree/master/examples) folder.
+This Project is a turn based game where the emus and the Australians fight. You control the Emus and your goal is to take over the Australian base and guide the emus to victory
 
-## Goal
-
-Plan, code, document, and present a game written in Python. I encourage you to include graphics with Pygame or another game engine, but will not require it.
+[Pdf 1](https://drive.google.com/open?id=1rObclx6P0r5jRFmUwcQHYmUX3CU7Ni5Z)
 
 ## Criteria
 
