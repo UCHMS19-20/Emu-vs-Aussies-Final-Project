@@ -1,6 +1,6 @@
 ## Description
 
-This Project is a turn based game where the emus and the Australians fight. You control the Emus and your goal is to take over the  Australian base and guide the emus to victory.
+In this game you have the ability to create and control as many emus as your money allows to crush the Australian competition. This games should take about 2-7 minutes for an average game. All te directions are included inside of it hopefully the game is enjoyable to play. 
 
 ## Flowchart Documentation
 
@@ -13,11 +13,8 @@ This Project is a turn based game where the emus and the Australians fight. You 
 
 Excellent work will include:
 
-* Clean, well-written, effective code
-* Version control in Git
-* Clear documentation of how te code works
-* A presentation of the game and of the process of creating it
-* Citations (MLA format) of the resources you used.
 
 ## Citations
-[Processing Reference](https://processing.org/reference/)
+                                                        Processing Reference
+
+Foundation, Processing. “Reference. Processing Was Designed to Be a Flexible Software Sketchbook.” Back to the Processing Cover.,             Processing Foundation, 20 Jan. 2020, processing.org/reference/.
