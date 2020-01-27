@@ -11,7 +11,7 @@ In this game you have the ability to create and control as many emus as your mon
 
 ## Presentation
 
-Excellent work will include:
+[Slides Presentation](https://docs.google.com/presentation/d/11U6dr_lXbHed6D9oWMzAKcVEqZwlfeePmL3G6uicWGU/edit?usp=sharing)
 
 
 ## Citations
