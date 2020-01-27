@@ -9,7 +9,7 @@ public EmuAll emus;
 public HumanAll humans;
 public Coin coin;
 
-// declares all charcter, key, and background pictures
+// declares all characters, keys, and background pictures
 PImage fistEmuPic;
 PImage gunEmuPic;
 PImage nukeEmuPic;
@@ -276,7 +276,6 @@ public void win(){
     * Once this function is run 150 times by draw() the game ends
     */   
     background(60,250,150);
-    textSize(130);
     fill(0, 0, 0);
     image(win,0,0,800,800);
     winLoseCounter ++;

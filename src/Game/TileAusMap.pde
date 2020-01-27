@@ -4,7 +4,6 @@ class TileAusMap extends Tilemap
     * Class creates a map from the tiles supplied to it
     */
 
-
     int x = 0;
     int y = 0;
 
