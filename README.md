@@ -15,6 +15,6 @@ In this game you have the ability to create and control as many emus as your mon
 
 
 ## Citations
-                                                        Processing Reference
+                                            Processing Reference
 
 Foundation, Processing. “Reference. Processing Was Designed to Be a Flexible Software Sketchbook.” Back to the Processing Cover.,             Processing Foundation, 20 Jan. 2020, processing.org/reference/.
