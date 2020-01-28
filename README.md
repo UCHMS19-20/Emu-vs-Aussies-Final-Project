@@ -2,6 +2,8 @@
 
 In this game you have the ability to create and control as many emus as your money allows in order to crush the Australian opposition. For a game length of 2-7 minutes you will do your best to avenge our fallen emu in the 1932 Emu War. With all the directions included in the game, there is no reason to not clone this repository and start playing today!!!
 
+![](images/githubPics/australia.png)
+
 ## Flowchart Documentation
 
 * [Pdf 1](https://drive.google.com/open?id=1rObclx6P0r5jRFmUwcQHYmUX3CU7Ni5Z)
