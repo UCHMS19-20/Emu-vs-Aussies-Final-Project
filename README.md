@@ -1,6 +1,6 @@
 ## Description
 
-In this game you have the ability to create and control as many emus as your money allows to crush the Australian competition. This games should take about 2-7 minutes for an average game. All te directions are included inside of it hopefully the game is enjoyable to play. 
+In this game you have the ability to create and control as many emus as your money allows in order to crush the Australian opposition. For a game length of 2-7 minutes you will do your best to avenge our fallen emu in the 1932 Emu War. With all the direction included in the game there is no reason to not clone this repository and start playing today!!!
 
 ## Flowchart Documentation
 
@@ -11,8 +11,7 @@ In this game you have the ability to create and control as many emus as your mon
 
 ## Presentation
 
-[Slides Presentation](https://docs.google.com/presentation/d/11U6dr_lXbHed6D9oWMzAKcVEqZwlfeePmL3G6uicWGU/edit?usp=sharing)
-
+[Google Slides Presentation](https://docs.google.com/presentation/d/11U6dr_lXbHed6D9oWMzAKcVEqZwlfeePmL3G6uicWGU/edit?usp=sharing)
 
 ## Citations
                                             Processing Reference
