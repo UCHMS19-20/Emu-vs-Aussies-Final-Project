@@ -136,7 +136,7 @@ void keyPressed(){
     String letter = Character.toString(key);
 
     if ((letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w")) && emus.emuList.size() > 0){
-        //If a, s, d, or w are pressed, emus move function is called
+        //If a, s, d, or w are pressed, emus function is called
         emus.move(letter);
     }
 
@@ -432,7 +432,7 @@ public void rules(){
     textSize(25);
     text("The purpose of this game is for ",400,100);
     text("an emu to reach the enemy castle on the right.",400,130);
-    text("You lose by having a human reach your base on the left",400,160);
+    text("You lose by having a human reach your base on the left.",400,160);
     text("This is a turn based game.",400,220);
     text("During a turn you can buy emus and",400,250);
     text("you can move each emu one square.",400,280);
