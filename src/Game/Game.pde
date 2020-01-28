@@ -381,7 +381,7 @@ public void introduction(){
             
         case 2:
             textSize(40);
-            text("The farmers of australia have", 400, 300);
+            text("The farmers of Australia have", 400, 300);
             text(" kept all the food from us,", 400, 350);
             text(" and waged the Emu War on us.",400,400);
             textSize(25);
