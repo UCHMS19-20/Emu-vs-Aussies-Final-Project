@@ -300,7 +300,7 @@ public void keys(){
     textSize(18);
 
     image(pointer,60,300,80,80);
-    text("spawns emu by click",100,400);
+    text("selects emu by click",100,400);
 
     image(one,260,300,80,80);
     text("spawns normal emu",300,400);
