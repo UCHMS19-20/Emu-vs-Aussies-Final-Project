@@ -135,7 +135,7 @@ void keyPressed(){
     //Makes letter variable based on key pressed
     String letter = Character.toString(key);
 
-    if (letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w")){
+    if ((letter.equals("a") || letter.equals("s") ||letter.equals("d") ||letter.equals("w")) && emus.emuList.size() > 0){
         //If a, s, d, or w are pressed, emus move function is called
         emus.move(letter);
     }
@@ -442,6 +442,3 @@ public void rules(){
     text("Press k to move onto game.",200,600);
     text("Press h to move back to keys.",600,600);
 }
-
-
-
